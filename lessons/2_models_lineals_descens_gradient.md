@@ -41,7 +41,7 @@ $$\frac{\partial f}{\partial x} = \frac{\partial}{\partial x}\left(x^2 + 2y^2 + 
 
 Farem el mateix per calcular la derivada parcial respecte a $y$, tractem $x$ com una constant:
 
-$$\frac{\partial f}{\partial y} = \frac{\partial}{\partial y}\left(x^2 + 2y^2 + xy - 3x\right) = 4y + x.$$
+$$\frac{\partial f}{\partial y} = \frac{\partial}{\partial y}\left(x^2 + 2y^2 + xy - 3x\right) = 4y + x. $$
 
 El gradient de la funció és:
 
@@ -121,7 +121,7 @@ $$x = -4y = \frac{12}{7}. $$
 
 Per tant, el mínim global s'assoleix a:
 
-$$(x^{*}, y^{*}) = \left(\frac{12}{7}, -\frac{3}{7}\right) \approx (1.714, -0.429). $$
+$$(x^{\ast}, y^{\ast}) = \left(\frac{12}{7}, -\frac{3}{7}\right) \approx (1.714, -0.429). $$
 
 Aquest resultat coincideix amb el punt final que obtenia el descens de gradient a la simulació anterior.
 

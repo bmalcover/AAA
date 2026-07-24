@@ -1,3 +1,4 @@
+
 # Conceptes elementals
 
 L'aprenentatge automàtic ens permet abordar tasques massa difícils de resoldre amb programes fixos, escrits i dissenyats per éssers humans. L'aprenentatge profund és un tipus específic d'aprenentatge automàtic que utilitza models compostos per múltiples capes o nivells de processament, encadenats entre si, per aprendre representacions de les dades cada cop més abstractes i complexes, cosa que li permet abordar problemes que els models clàssics no poden resoldre de manera efectiva. Per comprendre'ls bé, cal tenir una sòlida comprensió dels principis bàsics de l'aprenentatge automàtic. Aquest capítol ofereix un breu recorregut pels principis generals més importants que s'apliquen al llarg de tot els materials.
@@ -99,11 +100,11 @@ Per descomptat, és possible solucionar moltes altres tasques. Aquelles que enum
 
 ## Funció d'avaluació
 
-Per avaluar les capacitats d'un algoritme d'aprenentatge automàtic, es necessari de dissenyar una mesura quantitativa del seu rendiment. Normalment, aquesta mesura de rendiment és específica per a la tasca que està duent a terme el sistema i es coneix amb el nom de funció d'avaluació. Generalment es defineix com una funció de pèrdua (_loss function_): en lloc de mesurar si el model ho fa bé, mesurem fins a quin punt ho fa malament. 
+Per avaluar les capacitats d'un algoritme d'aprenentatge automàtic, es necessari de dissenyar una mesura quantitativa del seu rendiment. Normalment, aquesta mesura de rendiment és específica per a la tasca que està duent a terme el sistema i es coneix amb el nom de funció d'avaluació. Generalment, es defineix com una funció de pèrdua (_loss function_): en lloc de mesurar si el model ho fa bé, mesurem fins a quin punt ho fa malament. 
 
 Com que els models d'aprenentatge automàtic són models matemàtics, calen funcions de pèrdua definides de manera formal que indiquin si l'ajust dels paràmetres és encertat o no. 
 
-En l'aprenentatge automàtic, i en general en els mètodes d'optimització, aquestes funcions es coneixen com a funcions objectiu. Com que solen definir-se de manera que com més baix és l'error del model, millor és el resultat, aquestes funcions objectiu reben també el nom de funcions de pèrdua. En els problemes de regressió, on l'objectiu és predir valors numèrics continus, la funció de pèrdua més habitual és l'__error quadràtic__, és a dir, el quadrat de la diferència entre la predicció i el valor desitjat. En els problemes de classificació, en canvi, l'objectiu més comú és minimitzar la taxa d'error: la fracció de mostres en què la predicció del model no coincideix amb l'etiqueta real.
+En l'aprenentatge automàtic, i en general en els mètodes d'optimització, aquestes funcions es coneixen com a funció objectiu. Com que solen definir-se de manera que com més baix és l'error del model, millor és el resultat, aquestes funcions objectiu reben també el nom de funcions de pèrdua. En els problemes de regressió, on l'objectiu és predir valors numèrics continus, la funció de pèrdua més habitual és l'__error quadràtic__, és a dir, el quadrat de la diferència entre la predicció i el valor desitjat. En els problemes de classificació, en canvi, l'objectiu més comú és minimitzar la taxa d'error: la fracció de mostres en què la predicció del model no coincideix amb l'etiqueta real.
 
 Algunes funcions de pèrdua, com l'error quadràtic, són relativament fàcils d'optimitzar. Les funcions de pèrdua pròpies dels problemes de classificació, en canvi, resulten més difícils d'optimitzar directament, sobretot perquè solen ser complexes i, en alguns casos, difícils de derivar. La derivació és precisament el procediment que permet trobar el mínim d'aquestes funcions, el qual correspon al mínim error possible del model.
 
@@ -111,19 +112,19 @@ Algunes funcions de pèrdua, com l'error quadràtic, són relativament fàcils d
 
 L'algoritme d'aprenentatge, permet trobar els paràmetres del model que optimitzen la funció de pèrdua en un problema donat emprant un conjunt de dades. Durant l'aprenentatge, el model troba els millors valors dels paràmetres minimitzant la pèrdua (error) de les prediccions que va realitzant el model durant l'aprenentatge amb les dades etiquetades amb els valors desitjats. 
 
-Minimitzar l'error durant l'aprenentatge no garanteix que el model generalitzi, és a dir, que funcioni correctament amb dades noves. Una pràctica comuna consisteix en dividir les dades disponibles en dos conjunts: les dades d'entrenament (o conjunt d'entrenament), per ajustar els paràmetres del model i les dades de test (o conjunt de test), que es guarda per realitzar l'avaluació del model. A cada pas d'aprenentatge, l'algoritme informa dels errors comesos pel model en ambdós conjunts.
+Minimitzar l'error durant l'aprenentatge no garanteix que el model generalitzi, és a dir, que funcioni correctament amb dades noves. Una pràctica comuna consisteix a dividir les dades disponibles en dos conjunts: les dades d'entrenament (o conjunt d'entrenament), per ajustar els paràmetres del model i les dades de test (o conjunt de test), que es guarda per avaluar el model. A cada pas d'aprenentatge, l'algoritme informa dels errors comesos pel model en ambdós conjunts.
 
-Es podria comparar el rendiment del model durant l'aprenentatge amb els resultats d'un estudiant en les proves d'avaluació continuada d'un curs, on uns bons resultats no sempre garanteixen aprovar l'examen final. Quan un model funciona bé en el conjunt d'entrenament però no aconsegueix generalitzar a dades no vistes, diem que s'està sobreajustant (_overfitting_). Aquest fenomen s'explica sovint en termes del compromís entre biaix i variància: un model amb biaix alt és massa simple i no arriba a capturar els patrons de les dades (_underfitting_), mentre que un model amb variància alta és massa complex i s'adapta al soroll específic del conjunt d'entrenament, de manera que els seus resultats varien molt en canviar les dades d'entrenament. L'overfitting és, precisament, la manifestació d'aquesta variància excessiva.
+Es podria comparar el rendiment del model durant l'aprenentatge amb els resultats d'un estudiant en les proves d'avaluació continuada d'un curs, on uns bons resultats no sempre garanteixen aprovar l'examen final. Quan un model funciona bé en el conjunt d'entrenament, però no aconsegueix generalitzar a dades no vistes, diem que s'està sobre ajustant (_overfitting_). Aquest fenomen s'explica sovint en termes del compromís entre biaix i variància: un model amb biaix alt és massa simple i no arriba a capturar els patrons de les dades (_underfitting_), mentre que un model amb variància alta és massa complex i s'adapta al soroll específic del conjunt d'entrenament, de manera que els seus resultats varien molt en canviar les dades d'entrenament. L'_overfitting_ és, precisament, la manifestació d'aquesta variància excessiva.
 
 TODO IMATGE: Similar a deep learning 5.2
 
 
 El tipus d'algoritme d'aprenentatge és la divisió més utilitzada entre els models:
 
-- **Aprenentatge supervisat**: El dataset està compost per "parells" d'entrenament que consisteixen en una entrada i una sortida desitjada (etiqueta).
-- **Aprenentatge no supervisat**: En aquest cas, el dataset està compost només per les possibles entrades del model. Aquest ha de ser capaç d'agrupar les dades segons l'especificació del problema.
+- **Aprenentatge supervisat**: El conjunt de dades està compost per "parells" d'entrenament que consisteixen en una entrada i una sortida desitjada (etiqueta).
+- **Aprenentatge no supervisat**: En aquest cas, el conjunt de dades està compost només per les possibles entrades del model. Aquest ha de ser capaç d'agrupar les dades segons l'especificació del problema.
 
-Alguns algoritmes d'aprenentatge automàtic no es limiten a experimentar un dataset fix. Per exemple, els algoritmes d'aprenentatge per reforç interactuen amb un entorn, de manera que hi ha un bucle de retroalimentació entre el sistema d'aprenentatge i les seves experiències. Aquest tipus d'algoritmes queden fora de l'abast d'aquest curs.
+Alguns algoritmes d'aprenentatge automàtic no es limiten a experimentar un conjunt de dades fix. Per exemple, els algoritmes d'aprenentatge per reforç interactuen amb un entorn, de manera que hi ha un bucle de retroalimentació entre el sistema d'aprenentatge i les seves experiències. Aquest tipus d'algoritmes queden fora de l'abast d'aquest curs.
 
 
 

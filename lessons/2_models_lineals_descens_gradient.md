@@ -11,7 +11,7 @@ El descens de gradient assoleix aquest objectiu actualitzant iterativament els p
 
 La regla d'actualització dels paràmetres a cada iteració $t$ és:
 
-$$\theta_{t+1} = \theta_t - \eta \, \nabla_\theta J(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \eta \nabla_\theta J(\theta_t),$$
 
 on:
 
@@ -32,12 +32,13 @@ on $\epsilon$ és un llindar (*threshold*) petit predefinit, o bé quan s'assole
 
 ## Un exemple pràctic
 
-Donada la funció de dues variables $ f(x, y) = x^2 + 2y^2 + xy - 3x $ que es contínua i diferenciable a tot $\mathbb{R}^2$, aplicarem l'algorisme del descens del gradient de manera analítica seguint la regla d'actualització $\theta_{t+1} = \theta_t - \eta \, \nabla_\theta J(\theta_t)$, on $J$ és la funció $f$ i $\theta$ són $x, y$, els paràmetres de la funció.
+Donada la funció de dues variables $f(x, y) = x^2 + 2y^2 + xy - 3x$ que és contínua i diferenciable a tot $\mathbb{R}^2$. Aplicarem l'algorisme del descens del gradient de manera analítica seguint la regla d'actualització $\theta_{t+1} = \theta_t - \eta \, \nabla_\theta J(\theta_t)$, on $J$ és la funció $f$ i $\theta$ són $x, y$, els paràmetres de la funció.
 
 
 Per aplicar el descens de gradient necessitem el gradient $\nabla f(x,y)$, és a dir, les dues derivades parcials. Per calcular la derivada parcial respecte a $x$, tractem $y$ com una constant:
 
 $$\frac{\partial f}{\partial x} = \frac{\partial}{\partial x}\left(x^2 + 2y^2 + xy - 3x\right) = 2x + y - 3.$$
+
 Farem el mateix per calcular la derivada parcial respecte a $y$, tractem $x$ com una constant:
 
 $$\frac{\partial f}{\partial y} = \frac{\partial}{\partial y}\left(x^2 + 2y^2 + xy - 3x\right) = 4y + x.$$
@@ -45,7 +46,7 @@ $$\frac{\partial f}{\partial y} = \frac{\partial}{\partial y}\left(x^2 + 2y^2 + 
 El gradient de la funció és:
 
 $$
-\nabla f(x, y) = \begin{bmatrix} \dfrac{\partial f}{\partial x} \\[8pt] \dfrac{\partial f}{\partial y} \end{bmatrix} = \begin{bmatrix} 2x + y - 3 \\[4pt] 4y + x \end{bmatrix}
+\nabla f(x, y) = \begin{bmatrix} \dfrac{\partial f}{\partial x} \dfrac{\partial f}{\partial y} \end{bmatrix} = \begin{bmatrix} 2x + y - 3 \\ 4y + x \end{bmatrix}
 $$
 
 A cada iteració $t$, els paràmetres $(x, y)$ s'actualitzen movent-se en la direcció oposada al gradient, escalada per la taxa d'aprenentatge $\eta$:
@@ -58,10 +59,10 @@ O de manera separada, component a component:
 
 $$x_{t+1} = x_t - \eta\,(2x_t + y_t - 3).$$
 
-$$y_{t+1} = y_t - \eta\,(4y_t + x_t).$$
+$$y_{t+1} = y_t - \eta\,(4y_t + x_t). $$
 
 
-Un cop tenim les derivades parcials l'algorisme en Python seria el següent:
+Un cop tenim les derivades parcials podem construir l'algorisme en llenguatge Python per automatitzar el procés:
 
 ```python
 def f(x, y):
@@ -102,7 +103,9 @@ El resultat d'aplicar l'algorisme durant 50 iteracions és el següent:
 ![Visualització de l'algorisme del descens del gradient](../assets/gradient_descent/descens_gradient_3d.gif)
 
 
-[Codi Python disponible](../assets/gradient_descent/gradient_descent.zip).
+Codi Python disponible en el següent [enllaç](../assets/gradient_descent/gradient_descent.zip).
+
+### Solució analítica
 
 Com que $f$ és convexa només té un mínim, aquest es troba igualant el gradient a zero. Podem trobar la solució analítica i comprovar que és la mateixa que la que troba l'algorisme:
 
@@ -114,17 +117,19 @@ De la segona equació: $x = -4y$. Substituint a la primera:
 
 $$2(-4y) + y - 3 = 0 \;\Rightarrow\; -8y + y - 3 = 0 \;\Rightarrow\; -7y = 3 \;\Rightarrow\; y = -\frac{3}{7},$$
 
-$$x = -4y = \frac{12}{7}.$$
+$$x = -4y = \frac{12}{7}. $$
 
 Per tant, el mínim global s'assoleix a:
 
-$$(x^*, y^*) = \left(\frac{12}{7}, -\frac{3}{7}\right) \approx (1.714,\ -0.429).$$
+$$(x^{*}, y^{*}) = \left(\frac{12}{7}, -\frac{3}{7}\right) \approx (1.714, -0.429). $$
 
 Aquest resultat coincideix amb el punt final que obtenia el descens de gradient a la simulació anterior.
 
 ## Un exemple més complex
 
-La funció de l'exemple anterior és simple (té dos paràmetres) i només té un mínim. Per tant, el podíem trobar de forma analítica, en canvi, la funció $ f(x, y) = sin(x) * cos(y) + 0.1*(x^2 + y^2)$ no té una solució analítica tancada. En aquest cas, aplicant l'algorisme del descens del gradient podem intentar trobar-ho. En el següent gràfic podem veure com evoluciona l'algorisme depenent del punt d'inici
+La funció de l'exemple anterior és simple (té dos paràmetres) i només té un mínim. Per tant, el podíem trobar de forma analítica, en canvi, la funció $f(x, y) = sin(x) * cos(y) + 0.1*(x^2 + y^2)$ no té una solució analítica tancada. En aquest cas, aplicant l'algorisme del descens del gradient podem intentar trobar-ho. 
+
+En el següent gràfic podem veure com evoluciona l'algorisme depenent del punt d'inici:
 
 
 ![descens de gradient a una funció amb diversos mínims](../assets/gradient_descent_multi/descens_gradient_minims_locals.gif)

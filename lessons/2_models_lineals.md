@@ -4,18 +4,18 @@ En aquest capítol repassarem els models lineals, un dels enfocaments més senzi
 
  La sortida d'un model lineal és basa en una combinació lineals de les dades entrada, $\textbf{x}$, i els paràmetres del model, $\textbf{w}$. Sigui $\hat{y}$ el valor que el nostre model prediu que hauria de tenir $y$, definim la sortida com:
 
-$$\widehat{y} = f \!\left(b + \overset{n}{\sum_{j = 1}}w_{j} \cdot x_{j} \!\right),$$
+$$\widehat{y} = f \left(b + \overset{n}{\sum_{j = 1}}w_{j} \cdot x_{j} \right),$$
 
 on $\widehat{y}$ és el valor de predicció, $f$ és una funció donada normalment anomenada funció d'activació, $\mathbf{w} = (w_{1},\ldots,w_{j},\ldots,w_{n})$ és el vector de paràmetres del model i $b$ és un paràmetre addicional denominat biaix. Sense aquest terme, la recta (o hiperplà, en dimensions més altes) que representa el model estaria obligada a passar sempre per l'origen de coordenades, es a dir, quan totes les entrades $x$ són zero, la predicció $\hat{y}$​ també seria necessàriament zero. Aquesta és una restricció innecessària en la majoria de problemes reals.
 
 Generalment, es reordena el paràmetre biaix perquè pugui ser ajustat de la mateixa manera que la resta de paràmetres i es defineix com el primer element del vector de paràmetres ${0} = b$, i es ponderarà amb un valor d'entrada constant que és sempre $1$ (a nivell de codi, augmentem el vector de característiques en una dimensió). Així, el model quedaria:
 
-$$\widehat{y} = f\!\left(\overset{n}{\sum_{j = 0}}w_{j}x_{j}, \; \text{on} \; x_{0} = 1\!\right) .$$
+$$\widehat{y} = f\left(\overset{n}{\sum_{j = 0}}w_{j} \cdot x_{j}, \; \text{on} \; x_{0} = 1\right) .$$
 
 
 ## Regressió
 
-L'objectiu dels problemes de regressió és construir un sistema capaç d'agafar un vector $x \in \mathbb{R}^n$ com a entrada i predir el valor d'un escalar $y \in \mathbb{R}$ com a sortida. En el cas dels problemes de regressió la funció d'activació sol ser $z = f(z)$ on $z$ és $\overset{n}{\sum_{j = 0}}w_{j}x_{j}$.
+L'objectiu dels problemes de regressió és construir un sistema capaç d'agafar un vector $x \in \mathbb{R}^n$ com a entrada i predir el valor d'un escalar $y \in \mathbb{R}$ com a sortida. En el cas dels problemes de regressió la funció d'activació sol ser $z = f(z)$ on $z$ és la combinació lineal de les entrades amb els paràmetres del model.
 
 Com a exemple pràctic, considerem un conjunt de dades de vendes d'habitatges, on cada mostra recull les característiques d'un immoble i el seu preu de venda. Podríem construir una taula, on cada fila correspon a una propietat immobiliària diferent, i cada columna correspon a alguna característica, com els metres quadrats, el nombre d'habitacions o de banys, les plantes, o la seva antiguitat. Aquesta taula seria el nostre conjunt de dades, i cada exemple seria una fila de la taula, que correspondria a una propietat immobiliària específica amb les seves característiques. El preu de l'immoble és l'etiqueta del valor desitjat i, per tant, partint de la suposició que aquest és una combinació lineal ponderada de les característiques de l'immoble podríem emprar el model de lineal abans descrit.
 
@@ -48,9 +48,9 @@ Començarem amb la forma més simple de classificació, quan només hi ha dues c
 
 El model més senzill és aquell que només retorna un valor binari, $\hat{y} = \{0, 1\}$, on $0$ correspondria a la classe "negativa" i $1$ a la classe "positiva". Utilitzant el model lineal anterior, podem usar els valors ponderats de paràmetres i característiques com a valor d'entrada d'una nova funció, que denominarem **funció d'activació**, el valor de sortida de la qual estigui entre $0$ i $1$:
 
-$$\hat{y} = f\!\left(\sum_{j=0}^{n} w_j x_j\right), \quad \text{on} \quad f(z) = \frac{1}{1 + e^{-z}}.$$
+$$\hat{y} = f\left(\sum_{j=0}^{n} w_j  \cdot x_j\right), \quad \text{on} \quad f(z) = \frac{1}{1 + e^{-z}}.$$
 
-Aquest model es denomina **regressió logística**, ja que la funció d'activació és la funció sigmoide (un cas particular de la funció logística).
+Aquest model es denomina **regressió logística**, ja que la funció d'activació és la funció sigmoide, $\sigma$, un cas particular de la funció logística.
 
 
 <figure style="text-align: center;">
@@ -83,13 +83,13 @@ De manera visual podem veure la funció de la següent manera:
 
 ### Derivació del descens de gradient per a la regressió logística
 
-Abans de derivar, és útil calcular la derivada de $\sigma(z)$, ja que apareixerà repetidament:
+En primer lloc, abans de derivar, és útil calcular la derivada de $\sigma(z)$, ja que apareixerà repetidament:
 
-$$\sigma'(z) = \sigma(z)\,(1-\sigma(z)) = \hat{y}\,(1-\hat{y}).$$
+$$\sigma'(z) = \sigma(z)(1-\sigma(z)) = \hat{y} \cdot (1-\hat{y}).$$
 
-Com veurem al final del proces, aquesta propietat fa que la derivació sigui especialment elegant.
+Com veurem al final del procés, el fet que la seva derivada s'expressa en funció del seu propi valor fa que la derivació sigui especialment elegant.
 
-A continuació volem calcular $\dfrac{\partial J}{\partial w_j}$. La cadena de dependències a l'hora de derivar és la següent: $w_j \;\longrightarrow\; z \;\longrightarrow\; \hat{y} \;\longrightarrow\; J$. Aplicarem la regla de la cadena de la següent manera:
+A continuació necessitem calcular la derivada de la funció de pèrdua respecte als pesos del model. La cadena de dependències a l'hora de derivar és la següent: $w_j \longrightarrow z \longrightarrow \hat{y} \longrightarrow J$. Aplicarem la regla de la cadena de la següent manera:
 
 $$\frac{\partial J}{\partial w_j} = \frac{\partial J}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z} \cdot \frac{\partial z}{\partial w_j}.$$
 
@@ -101,30 +101,33 @@ En segon lloc la derivada de $\hat{y}$ respecte a $z$. Usant la propietat de la 
 
 $$\frac{\partial \hat{y}}{\partial z} = \hat{y}\,(1-\hat{y}).$$
 
-Finalment hem de calcular la derivada de $z$ respecte a $w_j$:
+Finalment, hem de calcular la derivada de $z$ respecte a $w_j$:
 
 $$\frac{\partial z}{\partial w_j} = x_j.$$
 
-Ara ja ens trobem en condicions de combinar les tres passes: 
+Ara ja ens trobem en condicions de combinar les tres passes:
+
 $$\frac{\partial J}{\partial w_j} = \left(-\frac{y}{\hat{y}} + \frac{1-y}{1-\hat{y}}\right) \cdot \hat{y}\,(1-\hat{y}) \cdot x_j.$$
 
 Desenvolupant el primer factor multiplicat pel segon:
 
 $$\left(-\frac{y}{\hat{y}} + \frac{1-y}{1-\hat{y}}\right) \cdot \hat{y}\,(1-\hat{y}) = -y\,(1-\hat{y}) + (1-y)\,\hat{y},$$
 
-$$= -y + y\hat{y} + \hat{y} - y\hat{y} = \hat{y} - y.$$
+$$= -y + y\hat{y} + \hat{y} - y\hat{y} = \hat{y} - y. $$
 
 Per tant, el gradient queda de la següent manera:
 
-$$\frac{\partial J}{\partial w_j} = (\hat{y} - y)\, x_j.$$
+$$\frac{\partial J}{\partial w_j} = (\hat{y} - y) \cdot x_j. $$
 
-Aplicant la regla del descens de gradient que ja coneixem, l'actualització d'un pes vé donada per: $w_j \leftarrow w_j - \eta \dfrac{\partial J}{\partial w_j}$:
+Aplicant la regla del descens de gradient que ja coneixem, l'actualització d'un pes vé donada per: 
 
-$$w_j = w_j - \eta\,(\hat{y} - y)\, x_j$$
+$$w_j \leftarrow w_j - \eta \dfrac{\partial J}{\partial w_j}.$$
+
+$$w_j = w_j - \eta  \cdot (\hat{y} - y)  \cdot x_j$$
 
 O de manera equivalent (canviant el signe):
 
-$$w_j = w_j + \eta\,(y - \hat{y})\, x_j$$
+$$w_j = w_j + \eta  \cdot (y - \hat{y}) \cdot x_j$$
 
 Aquesta regla d'actualització té exactament la mateixa forma que la de la regressió lineal. La diferència és que aquí $\hat{y} = \sigma(z)$ és la sortida de la sigmoide, mentre que en la regressió lineal $\hat{y} = w^\top x$ és directament la combinació lineal. És a dir, la forma de la regla d'aprenentatge és la mateixa, però el valor de $\hat{y}$ que s'hi substitueix és diferent en cada model. Aquest resultat no és casual, és una conseqüència directa d'haver escollit l'entropia creuada com a funció de pèrdua per a un model amb sortida sigmoide.
 

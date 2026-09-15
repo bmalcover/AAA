@@ -25,8 +25,46 @@ Un cop tenim el conjunt de dades i el model, necessitem un aplicar l'algorisme d
 
 $$J(\mathbf{w}) = \frac{1}{2}(\widehat{y} - y)^{2}.$$
 
+El factor $\dfrac{1}{2}$ s'inclou per conveniència, ja que cancel·la amb l'exponent en derivar, simplificant els càlculs.
+
 
 Els detalls de l'algorisme del descens del gradient i alguns exemples d'aplicació pràctica es troben disponibles en el següent [enllaç](2_models_lineals_descens_gradient.md).
+
+### Derivació del descens del gradient per la regressió
+
+
+
+Volem calcular $\dfrac{\partial J}{\partial w_j}$ per a cada pes $w_j$. La cadena de dependències és:
+
+$$w_j \;\longrightarrow\; \hat{y} \;\longrightarrow\; J$$
+
+Per la regla de la cadena:
+
+$$\frac{\partial J}{\partial w_j} = \frac{\partial J}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial w_j}.$$
+
+#### 1. Derivada de $J$ respecte a $\hat{y}$: 
+
+$$\frac{\partial J}{\partial \hat{y}^{(i)}} = \frac{\partial}{\partial \hat{y}^{(i)}} \left[\frac{1}{2}\left(\hat{y}^{(i)} - y^{(i)}\right)^2\right] = \left(\hat{y}^{(i)} - y^{(i)}\right).$$
+
+#### 2. Derivada de $\hat{y}$ respecte a $w_j$
+
+Com que $\hat{y} = \displaystyle\sum_{j=0}^{n} w_j x_j$, tractem tots els pesos $w_k$ amb $k \neq j$ com a constants:
+
+$$\frac{\partial \hat{y}^{(i)}}{\partial w_j} = x_j^{(i)}.$$
+
+Combinem els dos passos aplicant la regla de la cadena i sumant sobre tots els exemples:
+
+$$\frac{\partial J}{\partial w_j} =  \left(\hat{y}^{(i)} - y^{(i)}\right) \cdot x_j^{(i)}.$$
+
+
+Aplicant la regla del descens del gradient $w_j \leftarrow w_j - \alpha \dfrac{\partial J}{\partial w_j}$:
+
+$$w_j = w_j - {\alpha} \left(\hat{y}^{(i)} - y^{(i)}\right) \cdot x_j^{(i)}.$$
+
+on $\alpha > 0$ és la taxa d'aprenentatge (*learning rate*).
+
+La regla d'actualització té una interpretació clara. Quan el model sobreestima ($\hat{y}^{(i)} > y^{(i)}$), l'error $(\hat{y}^{(i)} - y^{(i)}) > 0$ i el pes $w_j$ disminueix. Quan el model subestima ($\hat{y}^{(i)} < y^{(i)}$), l'error $(\hat{y}^{(i)} - y^{(i)}) < 0$ i el pes $w_j$ augmenta. A més, com més gran és el valor de la característica $x_j^{(i)}$, més gran és la correcció aplicada al pes $w_j$ corresponent.
+
 
 ## Variants del descens de gradient
 
@@ -37,6 +75,8 @@ En el **batch gradient descent**, el gradient es calcula utilitzant tot el conju
 A l'altre extrem trobem l'**stochastic gradient descent** (_SGD_), on el gradient s'estima a partir d'un únic exemple triat a l'atzar a cada iteració. Això permet actualitzacions molt més ràpides i fa possible aprendre de manera incremental, però introdueix molt soroll en l'estimació del gradient, de manera que la trajectòria d'aprenentatge esdevé força irregular i sol necessitar més iteracions per convergir de manera fiable.
 
 El **mini-batch gradient descent** neix precisament com un compromís entre aquests dos extrems: en lloc d'utilitzar tot el conjunt de dades o un únic exemple, es calcula el gradient a partir d'un petit subconjunt de dades a cada pas anomenat _batch_. D'aquesta manera s'aconsegueix reduir considerablement el soroll respecte al _SGD_ pur, sense arribar al cost computacional del conjunt complet, i alhora s'aprofita molt millor el paral·lelisme del maquinari modern, com les GPU. Per aquest motiu, aquesta és l'estratègia més utilitzada en la pràctica a l'hora d'entrenar models d'aprenentatge profund.
+
+
 
 
 ## Classificació
@@ -121,13 +161,13 @@ $$\frac{\partial J}{\partial w_j} = (\hat{y} - y) \cdot x_j. $$
 
 Aplicant la regla del descens de gradient que ja coneixem, l'actualització d'un pes vé donada per: 
 
-$$w_j \leftarrow w_j - \eta \dfrac{\partial J}{\partial w_j}.$$
+$$w_j \leftarrow w_j - \alpha \dfrac{\partial J}{\partial w_j}.$$
 
-$$w_j = w_j - \eta  \cdot (\hat{y} - y)  \cdot x_j$$
+$$w_j = w_j - \alpha  \cdot (\hat{y} - y)  \cdot x_j$$
 
 O de manera equivalent (canviant el signe):
 
-$$w_j = w_j + \eta  \cdot (y - \hat{y}) \cdot x_j$$
+$$w_j = w_j + \alpha  \cdot (y - \hat{y}) \cdot x_j$$
 
 Aquesta regla d'actualització té exactament la mateixa forma que la de la regressió lineal. La diferència és que aquí $\hat{y} = \sigma(z)$ és la sortida de la sigmoide, mentre que en la regressió lineal $\hat{y} = w^\top x$ és directament la combinació lineal. És a dir, la forma de la regla d'aprenentatge és la mateixa, però el valor de $\hat{y}$ que s'hi substitueix és diferent en cada model. Aquest resultat no és casual, és una conseqüència directa d'haver escollit l'entropia creuada com a funció de pèrdua per a un model amb sortida sigmoide.
 

@@ -11,18 +11,18 @@ El descens de gradient assoleix aquest objectiu actualitzant iterativament els p
 
 La regla d'actualització dels paràmetres a cada iteració $t$ és:
 
-$$\theta_{t+1} = \theta_t - \eta \nabla_\theta J(\theta_t),$$
+$$\theta_{t+1} = \theta_t - \alpha \nabla_\theta J(\theta_t),$$
 
 on:
 
 - $\theta_t \in \mathbb{R}^n$ són els paràmetres del model en la iteració $t$.
-- $\eta > 0$ és la **taxa d'aprenentatge** (*learning rate*), un hiperparàmetre que controla la mida del pas a cada actualització.
+- $\alpha > 0$ és la **taxa d'aprenentatge** (*learning rate*), un hiperparàmetre que controla la mida del pas a cada actualització.
 - $\nabla_\theta J(\theta_t)$ és el gradient de la funció de cost respecte als paràmetres, avaluat en $\theta_t$.
 
 
 De manera més explícita, per a cada component $\theta_i$ del vector de paràmetres:
 
-$$\theta_i \leftarrow \theta_i - \eta \, \frac{\partial J(\theta)}{\partial \theta_i}.$$
+$$\theta_i \leftarrow \theta_i - \alpha \, \frac{\partial J(\theta)}{\partial \theta_i}.$$
 
 L'algoritme s'atura quan es compleix algun criteri de convergència, per exemple:
 
@@ -32,7 +32,7 @@ on $\epsilon$ és un llindar (*threshold*) petit predefinit, o bé quan s'assole
 
 ## Un exemple pràctic
 
-Donada la funció de dues variables $f(x, y) = x^2 + 2y^2 + xy - 3x$ que és contínua i diferenciable a tot $\mathbb{R}^2$. Aplicarem l'algorisme del descens del gradient de manera analítica seguint la regla d'actualització $\theta_{t+1} = \theta_t - \eta \, \nabla_\theta J(\theta_t)$, on $J$ és la funció $f$ i $\theta$ són $x, y$, els paràmetres de la funció.
+Donada la funció de dues variables $f(x, y) = x^2 + 2y^2 + xy - 3x$ que és contínua i diferenciable a tot $\mathbb{R}^2$. Aplicarem l'algorisme del descens del gradient de manera analítica seguint la regla d'actualització $\theta_{t+1} = \theta_t - \alpha \, \nabla_\theta J(\theta_t)$, on $J$ és la funció $f$ i $\theta$ són $x, y$, els paràmetres de la funció.
 
 
 Per aplicar el descens de gradient necessitem el gradient $\nabla f(x,y)$, és a dir, les dues derivades parcials. Per calcular la derivada parcial respecte a $x$, tractem $y$ com una constant:
@@ -49,17 +49,17 @@ $$
 \nabla f(x, y) = \begin{bmatrix} \dfrac{\partial f}{\partial x} \dfrac{\partial f}{\partial y} \end{bmatrix} = \begin{bmatrix} 2x + y - 3 \\ 4y + x \end{bmatrix}
 $$
 
-A cada iteració $t$, els paràmetres $(x, y)$ s'actualitzen movent-se en la direcció oposada al gradient, escalada per la taxa d'aprenentatge $\eta$:
+A cada iteració $t$, els paràmetres $(x, y)$ s'actualitzen movent-se en la direcció oposada al gradient, escalada per la taxa d'aprenentatge $\alpha$:
 
 $$
-\begin{bmatrix} x_{t+1} \\ y_{t+1} \end{bmatrix} = \begin{bmatrix} x_t \\ y_t \end{bmatrix} - \eta \begin{bmatrix} 2x_t + y_t - 3 \\ 4y_t + x_t \end{bmatrix}
+\begin{bmatrix} x_{t+1} \\ y_{t+1} \end{bmatrix} = \begin{bmatrix} x_t \\ y_t \end{bmatrix} - \alpha \begin{bmatrix} 2x_t + y_t - 3 \\ 4y_t + x_t \end{bmatrix}
 $$
 
 O de manera separada, component a component:
 
-$$x_{t+1} = x_t - \eta\,(2x_t + y_t - 3).$$
+$$x_{t+1} = x_t - \alpha\,(2x_t + y_t - 3).$$
 
-$$y_{t+1} = y_t - \eta\,(4y_t + x_t). $$
+$$y_{t+1} = y_t - \alpha\,(4y_t + x_t). $$
 
 
 Un cop tenim les derivades parcials podem construir l'algorisme en llenguatge Python per automatitzar el procés:

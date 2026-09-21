@@ -57,13 +57,13 @@ Combinem els dos passos aplicant la regla de la cadena i sumant sobre tots els e
 $$\frac{\partial J}{\partial w_j} =  \left(\hat{y}^{(i)} - y^{(i)}\right) \cdot x_j^{(i)}.$$
 
 
-Aplicant la regla del descens del gradient $w_j \leftarrow w_j - \alpha \dfrac{\partial J}{\partial w_j}$:
+Aplicant la regla del descens del gradient $w_j \leftarrow w_j - \eta \dfrac{\partial J}{\partial w_j}$:
 
-$$w_j = w_j - {\alpha} \left(\hat{y}^{(i)} - y^{(i)}\right) \cdot x_j^{(i)}.$$
+$$w_j = w_j - {\eta} \left(\hat{y}^{(i)} - y^{(i)}\right) \cdot x_j^{(i)}.$$
 
-on $\alpha > 0$ és la taxa d'aprenentatge (*learning rate*).
+on $\eta > 0$ és la taxa d'aprenentatge (*learning rate*). Un hiperparàmetre que determina com influeix l'error en l'actualitzazció del pes $w_j$.
 
-La regla d'actualització té una interpretació clara. Quan el model sobreestima ($\hat{y}^{(i)} > y^{(i)}$), l'error $(\hat{y}^{(i)} - y^{(i)}) > 0$ i el pes $w_j$ disminueix. Quan el model subestima ($\hat{y}^{(i)} < y^{(i)}$), l'error $(\hat{y}^{(i)} - y^{(i)}) < 0$ i el pes $w_j$ augmenta. A més, com més gran és el valor de la característica $x_j^{(i)}$, més gran és la correcció aplicada al pes $w_j$ corresponent.
+Aquesta regla d'actualització té una interpretació clara. Quan el model sobreestima ($\hat{y}^{(i)} > y^{(i)}$), l'error $(\hat{y}^{(i)} - y^{(i)}) > 0$ i el pes $w_j$ disminueix. Quan el model subestima ($\hat{y}^{(i)} < y^{(i)}$), l'error $(\hat{y}^{(i)} - y^{(i)}) < 0$ i el pes $w_j$ augmenta. A més, com més gran és el valor de la característica $x_j^{(i)}$, més gran és la correcció aplicada al pes $w_j$ corresponent.
 
 
 ## Variants del descens de gradient
@@ -137,7 +137,7 @@ Realitzarem les derivades parcials una a una abans de concatenar-les. En primer 
 
 $$\frac{\partial J}{\partial \hat{y}} = -\frac{y}{\hat{y}} + \frac{1-y}{1-\hat{y}}.$$
 
-En segon lloc la derivada de $\hat{y}$ respecte a $z$. Usant la propietat de la funció sigmoide (la seva derivada s'expressa en funció del seu propi valor) tenim que:
+En segon lloc, la derivada de $\hat{y}$ respecte a $z$. Usant la propietat de la funció sigmoide (la seva derivada s'expressa en funció del seu propi valor) tenim que:
 
 $$\frac{\partial \hat{y}}{\partial z} = \hat{y}\,(1-\hat{y}).$$
 
@@ -161,13 +161,13 @@ $$\frac{\partial J}{\partial w_j} = (\hat{y} - y) \cdot x_j. $$
 
 Aplicant la regla del descens de gradient que ja coneixem, l'actualització d'un pes vé donada per: 
 
-$$w_j \leftarrow w_j - \alpha \dfrac{\partial J}{\partial w_j}.$$
+$$w_j \leftarrow w_j - \eta \dfrac{\partial J}{\partial w_j}.$$
 
-$$w_j = w_j - \alpha  \cdot (\hat{y} - y)  \cdot x_j$$
+$$w_j = w_j - \eta  \cdot (\hat{y} - y)  \cdot x_j$$
 
 O de manera equivalent (canviant el signe):
 
-$$w_j = w_j + \alpha  \cdot (y - \hat{y}) \cdot x_j$$
+$$w_j = w_j + \eta  \cdot (y - \hat{y}) \cdot x_j$$
 
 Aquesta regla d'actualització té exactament la mateixa forma que la de la regressió lineal. La diferència és que aquí $\hat{y} = \sigma(z)$ és la sortida de la sigmoide, mentre que en la regressió lineal $\hat{y} = w^\top x$ és directament la combinació lineal. És a dir, la forma de la regla d'aprenentatge és la mateixa, però el valor de $\hat{y}$ que s'hi substitueix és diferent en cada model. Aquest resultat no és casual, és una conseqüència directa d'haver escollit l'entropia creuada com a funció de pèrdua per a un model amb sortida sigmoide.
 

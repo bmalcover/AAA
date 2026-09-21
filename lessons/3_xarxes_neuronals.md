@@ -3,11 +3,7 @@
 El cervell humà està format per una substància grisa que conté aproximadament 100.000 milions de neurones, cèl·lules nervioses especialitzades en la transmissió d'informació entre el cervell i la resta del cos, interconnectades formant una xarxa de comunicació d'una complexitat extraordinària.
 
 
-<figure style="text-align: center;">
-    <img src="../assets/sinapsi.png" width="400"
-         alt="Connexions entre neurones">
-    <figcaption>Connexions entre neurones.</figcaption>
-</figure> 
+![Connexions entre neurones](../assets/sinapsi.png){width=300px}
 
 Com es veu a la figura anterior, cada neurona té múltiples connexions amb altres cèl·lules per mitjà de la sinapsi, que és una reacció química entre el senyal elèctric generat al nucli de la cèl·lula, que quan rep prou connexions per mitjà d'unes terminacions denominades dendrites, es transmet per l'axó cap a les neurones següents.
 
@@ -47,17 +43,14 @@ Aquesta regla té una interpretació intuïtiva molt clara. Si el model encerta 
 
 Tanmateix, malgrat l'expectació generada per aquest model, la publicació del llibre *Perceptrons* (Minski and Papert, 1969) va provocar un abandonament en el finançament de la recerca en xarxes neuronals artificials. En aquest llibre es demostrava que el Perceptró no era capaç de resoldre un problema senzill com el de la porta lògica XOR.
 
-<figure style="text-align: center;">
-    <img src="../assets/xor.png" width="300"
-         alt="Problema XOR">
-    <figcaption>Problema XOR.</figcaption>
-</figure>
+
+![Problema XOR.](../assets/xor.png){width=300px}
 
 Com es pot observar a la figura anterior, s'arriba a una contradicció en la derivació matemàtica del problema. Si ens fixem en la seva representació gràfica, podem comprovar com no és possible separar els exemples de les dues classes mitjançant una única recta.
 
 En general, els models lineals de classificació, com el Perceptró, només poden resoldre aplicacions de classificació on els exemples de cada classe puguin separar-se per un hiperplà (una recta $n$-dimensional). Tanmateix, si ens fixem en la representació gràfica de la funció XOR, si tinguéssim la capacitat de definir dues rectes de separació, és a dir, definir dos Perceptrons, podríem resoldre aquest problema de manera més senzilla.
 
-De nou, inspirant-se en el comportament del cervell humà, on les neurones no actuen de manera aïllada sinó organitzades en capes interconnectades, la solució natural a la limitació del Perceptró simple és apilar diverses capes de neurones, donant lloc al Perceptró multicapa. Amb aquesta arquitectura, els problemes linealment no separables poden resoldre's, ja que cada capa addicional permet aprendre representacions cada cop més complexes de les dades. Tanmateix, aquest avenç teòric va quedar paralitzat durant gairebé dues dècades: no va ser fins al 1986 que Rumelhart, Hinton i Williams van publicar l'algoritme Backpropagation, que per primera vegada oferia una regla d'aprenentatge pràctica i eficient per a xarxes de múltiples capes. Aquest algoritme, que veurem en el següent tema, és la pedra angular de l'aprenentatge profund modern.
+De nou, inspirant-se en el comportament del cervell humà, on les neurones no actuen de manera aïllada sinó organitzades en capes interconnectades, la solució natural a la limitació del Perceptró simple és apilar diverses capes de neurones, donant lloc al Perceptró multicapa. Amb aquesta arquitectura, els problemes linealment no separables poden resoldre's, ja que cada capa addicional permet aprendre representacions cada cop més complexes de les dades. Tanmateix, aquest avenç teòric va quedar paralitzat durant gairebé dues dècades: no va ser fins al 1986 que Rumelhart, Hinton i Williams van publicar l'algoritme backpropagation, que per primera vegada oferia una regla d'aprenentatge pràctica i eficient per a xarxes de múltiples capes. Aquest algoritme, que veurem en el següent tema, és la pedra angular de l'aprenentatge profund modern.
 
 ## El Perceptró multicapa
 
@@ -65,11 +58,9 @@ De la mateixa manera que el cervell humà no funciona amb una única neurona aï
 
 A continuació tenim l'esquema general del perceptró multicapa:
 
-<figure style="text-align: center;">
-    <img src="../assets/xarxa_neuronal_cat.png" width="400"
-         alt="Xarxa neuronal multi capa.">
-    <figcaption>Xarxa neuronal multi capa.</figcaption>
-</figure>
+
+![Xarxa neuronal multi capa.](../assets/xarxa_neuronal_cat.png){width=300px}
+
 
 En aquesta figura, hem usat cercles blaus per indicar les entrades a la xarxa. Els cercles etiquetats com a $+1$ són les unitats associades al valor del biaix, que ja havíem vist en els models lineals. La capa més a l'esquerra de la xarxa es denomina **capa d'entrada**, i la capa més a la dreta, la **capa de sortida** que, en aquest exemple, només té una neurona. La capa intermèdia de neurones es denomina **capa oculta**, perquè els seus valors no són observables durant l'entrenament. Per definir l'arquitectura del nostre model podem dir que la nostra xarxa neuronal té 3 unitats d'entrada (sense comptar la unitat de biaix), 3 unitats ocultes i 1 unitat de sortida.
 
@@ -132,7 +123,6 @@ Sense una funció d'activació, una xarxa neuronal, independentment del nombre d
 $$f(z) = \frac{1}{1+e^{-z}}, \qquad f'(z) = f(z) \cdot (1 - f(z)).$$
 
 
-
 2. **Tangent hiperbòlica:**
 
  Una altra opció similar, però quan el valor de sortida està entre $-1$ i $1$, és la funció tangent hiperbòlica, o *tanh*.
@@ -183,7 +173,7 @@ Podem veure el resultat en la següent taula:
 
 El model assigna una probabilitat del $63.8\%$ a la classe 4, que seria la predicció final del model. Observa com la softmax amplifica les diferències: tot i que $z_5 = 3.2$ és només $1.1$ unitats més gran que $z_1 = 2.1$, la probabilitat assignada és tres vegades més gran ($63.8\%$ vs $21.2\%$). Això és conseqüència directa de la funció exponencial, que magnifica les diferències entre els valors d'entrada.
 
-4. **Funció Lineal Rectificada** (*ReLU*)**
+4. **Funció Lineal Rectificada** (*ReLU*):
 
 Recerques recents han trobat una funció d'activació diferent, la ReLU (per les seves sigles en anglès), que funciona millor a la pràctica a les capes ocultes de les xarxes neuronals profundes. Aquesta funció d'activació és diferent de la sigmoide i la *tanh* perquè no està limitada ni és contínuament diferenciable, que és una de les condicions "teòriques" que han de complir aquestes funcions per poder ser usades en el descens del gradient.
 

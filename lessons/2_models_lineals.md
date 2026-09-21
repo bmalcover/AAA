@@ -93,11 +93,7 @@ $$\hat{y} = f\left(\sum_{j=0}^{n} w_j  \cdot x_j\right), \quad \text{on} \quad f
 Aquest model es denomina **regressió logística**, ja que la funció d'activació és la funció sigmoide, $\sigma$, un cas particular de la funció logística.
 
 
-<figure style="text-align: center;">
-    <img src="../assets/SigmoidFunction.png" width="300"
-         alt="Funció sigmoide">
-    <figcaption>Funció sigmoide.</figcaption>
-</figure>
+![Funció sigmoide.](../assets/SigmoidFunction.png){width=300px}
 
 L'avantatge d'utilitzar aquesta funció és que és possible expressar el valor de la predicció com una probabilitat. Donades les característiques d'una mostra, aquest model assigna una probabilitat a cada classe possible. Tornant al nostre exemple de classificació d'animals, un classificador podria veure una imatge i generar la probabilitat que la imatge sigui un gat com a $0.9$. Podem interpretar aquest nombre dient que el classificador està un $90\%$ segur que la imatge representa un gat. La magnitud de la probabilitat de la classe pronosticada transmet una noció d'incertesa en la predicció realitzada.
 
@@ -113,11 +109,9 @@ $$J(w) = -\, y \cdot \log \hat{y} \;-\; (1 - y) \cdot \log(1 - \hat{y}).$$
 
 De manera visual podem veure la funció de la següent manera:
 
-<figure style="text-align: center;">
-    <img src="../assets/binary_cross_entropy.png" width="300"
-         alt="Entropia creuada.">
-    <figcaption>Entropia creuada.</figcaption>
-</figure>
+
+![Entropia creuada.](../assets/binary_cross_entropy.png){width=300px}
+
 
 És a dir, si estem prop dels valors de cada classe, l'error és petit, mentre que creix exponencialment com més ens allunyem dels valors desitjats. Tot i que té un terme per a les mostres positives i un altre per a les mostres negatives, és fàcil combinar-los en una única funció de pèrdua sumant tots dos termes depenent de l'etiqueta que tinguem com a valor desitjat per a cada mostra. És fàcil comprovar que si el valor és $0$ ens quedarem amb el segon terme, i si el valor és $1$, ens quedarem amb el primer terme.
 

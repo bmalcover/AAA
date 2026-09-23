@@ -206,11 +206,14 @@ Així, l'algoritme seria el següent:
 
 $$\delta_i^{(l)} = \left(\sum_{k=1}^{s_{l+1}} W_{ki}^{(l)} \, \delta_k^{(l+1)}\right) \cdot f'\!\left(z_i^{(l)}\right).$$
 
-3. Finalment, una vegada calculats tots els errors de totes les unitats, les regles d'ajust de tots els pesos i bias de la xarxa neuronal serien:
+3. Finalment, una vegada calculats tots els errors de totes les unitats, les regles d'ajust de tots els pesos i biaixos de la xarxa neuronal serien:
 
-$$W_{ij}^{(l)} = W_{ij}^{(l)} - \alpha \, a_j^{(l)} \, \delta_i^{(l+1)},$$
+$$W_{ij}^{(l)} = W_{ij}^{(l)} - \eta \, a_j^{(l)} \, \delta_i^{(l+1)},$$
 
-$$b_i^{(l)} = b_i^{(l)} - \alpha \, \delta_i^{(l+1)}.$$
+$$b_i^{(l)} = b_i^{(l)} - \eta \, \delta_i^{(l+1)}.$$
 
 A la figura següent es pot veure de manera gràfica com el càlcul dels termes d'error de cada unitat es calcula de manera inversa al càlcul de la predicció, començant per l'error a l'última capa (que podem calcular fàcilment a partir de la funció de pèrdua) fins als termes d'error de la primera capa oculta.
+
+![Lògica backpropagation](../assets/mlp_forward_backward.png){width=300px}
+
 

@@ -115,15 +115,16 @@ De manera visual podem veure la funció de la següent manera:
 
 És a dir, si estem prop dels valors de cada classe, l'error és petit, mentre que creix exponencialment com més ens allunyem dels valors desitjats. Tot i que té un terme per a les mostres positives i un altre per a les mostres negatives, és fàcil combinar-los en una única funció de pèrdua sumant tots dos termes depenent de l'etiqueta que tinguem com a valor desitjat per a cada mostra. És fàcil comprovar que si el valor és $0$ ens quedarem amb el segon terme, i si el valor és $1$, ens quedarem amb el primer terme.
 
-### Derivació del descens de gradient per a la regressió logística
+###  Descens del gradient per a la regressió logística
 
-En primer lloc, abans de derivar, és útil calcular la derivada de $\sigma(z)$, ja que apareixerà repetidament:
+En primer lloc, és útil calcular la derivada de $\sigma(z)$, ja que després la necessitarem i així no serà necessari interrompre cap passa:
 
 $$\sigma'(z) = \sigma(z)(1-\sigma(z)) = \hat{y} \cdot (1-\hat{y}).$$
 
-Com veurem al final del procés, el fet que la seva derivada s'expressa en funció del seu propi valor fa que la derivació sigui especialment elegant.
+Com veurem al final del procés, el fet que la seva derivada s'expresia en funció del seu propi valor fa que aquesta sigui especialment elegant.
 
-A continuació necessitem calcular la derivada de la funció de pèrdua respecte als pesos del model. La cadena de dependències a l'hora de derivar és la següent: $w_j \longrightarrow z \longrightarrow \hat{y} \longrightarrow J$. Aplicarem la regla de la cadena de la següent manera:
+A continuació necessitem calcular la derivada de la funció de pèrdua respecte als pesos del model. La cadena de dependències a l'hora de derivar és la següent: $w_j \longrightarrow z \longrightarrow \hat{y} \longrightarrow J$. 
+Per tant, aplicarem la regla de la cadena de la següent manera:
 
 $$\frac{\partial J}{\partial w_j} = \frac{\partial J}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z} \cdot \frac{\partial z}{\partial w_j}.$$
 

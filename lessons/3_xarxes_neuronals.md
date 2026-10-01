@@ -184,13 +184,43 @@ $$f(z) = \max(0, z) = \begin{cases} z & \text{si } z > 0 \\ 0 & \text{si no} \en
 Com podem veure, en el cas de $z = 0$, la derivada pot ser $0$ o $1$ indistintament. En la pràctica, les implementacions de les biblioteques (PyTorch o TensorFlow) simplement trien un valor concret per convenció.
 
 
+### Funcions de pèrdua
+
+
+
+Tal com hem explicat al capítol anterior amb els models lineals. Per mesurar l'error, cal una funció de pèrdua. La funció de pèrdua indica a la màquina com de lluny està la combinació de pesos i biaixos de la solució òptima. Hi ha moltes funcions de pèrdua que es poden usar en xarxes neuronals; l'error quadràtic mitjà (_Mean Squared Error_, MSE) i l'entropia creuada (_Cross Entropy Loss_) són dues de les més habituals.
+
+
+#### Funció de pèrdua Error Quadràtic Mitjà (_MSE_):
+
+$$\text{MSE Loss} =  \frac{1}{2} \, (y - \hat{y})^2.$$
+
+#### Funció de pèrdua d'entropia creuada (binària)
+
+Coneguda amb el nom de Binary Cross Entropy (_BCE_):
+
+$$\text{BCE Loss} =  -\, y \cdot \log \hat{y} \;-\; (1 - y) \cdot \log(1 - \hat{y}).$$
+
+
+#### Funció de pèrdua d'entropia creuada (multiclasse):
+
+Més coneguda pel seu nom en anglès _Cross Entropy_; Quan el problema de classificació té més de dues classes, la fórmula anterior es generalitza sumant sobre totes les $K$ classes possibles. Per a un exemple amb etiqueta real $y$ (en format *one-hot*) i predicció $\hat{y}$ (obtinguda, per exemple, amb la funció *softmax*):
+
+$$\text{Cross Entropy Loss} = -\sum_{k=1}^{K} y_k \log(\hat{y}_k),$$
+
+on $K$ és el nombre total de classes, $y_k$ val $1$ si $k$ és la classe correcta i $0$ en cas contrari, i $\hat{y}_k$ és la probabilitat que el model assigna a la classe $k$.
+
+
+
+
+
 ## L'algoritme *backpropagation*
 
-En l'explicació del Perceptró hem vist que, tot i que era conegut que els problemes linealment no separables, com el de la porta lògica XOR, es podien resoldre amb una xarxa neuronal multicapa, no va ser fins al 1986 que Rumelhart, Hinton i Williams van definir un algoritme d'aprenentatge per a aquest tipus de models: l'algoritme backpropagation.
+En l'explicació del Perceptró hem vist que, tot i que era conegut que els problemes linealment no separables, com el de la porta lògica XOR, es podien resoldre amb una xarxa neuronal multicapa, no va ser fins al 1986 que Rumelhart, Hinton i Williams van definir un algoritme d'aprenentatge per a aquest tipus de models: l'algoritme  _backpropagation_.
 
-El problema que impedia aplicar el descens del gradient als models multicapa és el següent: la funció de pèrdua només es pot calcular a l'última capa, ja que és allà on tenim tant el valor de sortida de la xarxa com el valor desitjat, i per tant podem comparar-los per mesurar l'error. Però, quin seria el valor desitjat d'una unitat de les capes ocultes? No ho sabem, perquè les capes ocultes no produeixen una sortida directament observable ni comparable amb cap etiqueta del conjunt d'entrenament. Aquest és precisament el problema que backpropagation resol de manera elegant.
+El problema que impedia aplicar el descens del gradient als models multicapa és el següent: la funció de pèrdua només es pot calcular a l'última capa, ja que és allà on tenim tant el valor de sortida de la xarxa com el valor desitjat, i per tant podem comparar-los per mesurar l'error. Però, quin seria el valor desitjat d'una unitat de les capes ocultes? No ho sabem, perquè les capes ocultes no produeixen una sortida directament observable ni comparable amb cap etiqueta del conjunt d'entrenament. Aquest és precisament el problema que _backpropagation_ resol de manera elegant.
 
-La idea bàsica de l'algoritme *backpropagation* és que és possible calcular el valor de la funció de pèrdua de les unitats de l'última capa i propagar-lo cap enrere, fins a arribar a les unitats de la primera capa oculta.
+La idea bàsica de l'algoritme _backpropagation_ és que és possible calcular el valor de la funció de pèrdua de les unitats de l'última capa i propagar-lo cap enrere, fins a arribar a les unitats de la primera capa oculta.
 
 Així, l'algoritme seria el següent:
 
@@ -198,9 +228,7 @@ Així, l'algoritme seria el següent:
 
 2. Per a cada unitat de sortida $i$ de la capa $n_l$ (la capa de sortida), calculem el valor de la funció de pèrdua per la derivada de la funció d'activació, que correspondrà a l'error comès per la unitat $i$ de sortida, $\delta_i^{(n_l)}$.
 
-    - Així, per exemple, per a la funció de pèrdua de la diferència de l'error al quadrat, o la d'entropia creuada, seria:
-
-    $$\delta_i^{(n_l)} = -\left(y_i - a_i^{(n_l)}\right) \cdot f'\!\left(z_i^{(n_l)}\right). $$
+    $$\delta_i^{(n_l)} = \frac{\partial \mathcal{L}}{\partial a_i^{(n_l)}} \, f'\!\left(z_i^{(n_l)}\right). $$
 
     - Per a la resta de capes, des de la capa $n_l - 1$ fins a la capa $1$, propagaríem els termes d'error cap enrere:
 
@@ -214,6 +242,38 @@ $$b_i^{(l)} = b_i^{(l)} - \eta \, \delta_i^{(l+1)}.$$
 
 A la figura següent es pot veure de manera gràfica com el càlcul dels termes d'error de cada unitat es calcula de manera inversa al càlcul de la predicció, començant per l'error a l'última capa (que podem calcular fàcilment a partir de la funció de pèrdua) fins als termes d'error de la primera capa oculta.
 
-![Lògica backpropagation](../assets/mlp_forward_backward.png){width=300px}
+![Lògica backpropagation](../assets/mlp_forward_backward.png){width=200}
 
 
+
+### Adaptació de l'algorisme a diverses funcions de pèrdua
+
+L'algorisme que hem vist a la secció anterior és genèric per qualsevol funció de pèrdua que puguem emprar. El terme $\frac{\partial \mathcal{L}}{\partial a_i^{(n_l)}}$ a l'equació de càlcul de l'error de la darrera capa, $\delta_i^{(n_l)}$, és genèric, cada funció de pèrdua té una derivada diferent. 
+
+Per altra banda, en la mateixa equació, l'expressió $f'\!\left(z_i^{(n_l)}\right)$ indica que hem de calcular la derivada de la funció d'activació respecte al valor net de la neurona. Com ja sabem, les funcions d'activació i pèrdua es troben molt relacionades amb l'arquitectura i el problema a resoldre. En aquesta secció veurem com és l'expressió  per les funcions de pèrdua més emprades.
+
+#### Error quadràtic mitjà
+
+ - Error per a l'última capa:
+
+$$\delta_i^{(n_l)} = \frac{\partial \mathcal{L}}{\partial a_i^{(n_l)}} \, f'\!\left(z_i^{(n_l)}\right) = \left(a_i^{(n_l)} - y\right) f'\!\left(z_i^{(n_l)}\right).$$
+
+- Regla d'actualització per a l'última capa:
+
+$$W_{ij}^{(l)} = W_{ij}^{(l)} - \alpha \frac{\partial \mathcal{L}}{\partial W_{ij}^{(l)}} = W_{ij}^{(l)} + \alpha \left(y - a_i^{(n_l)}\right) f'\!\left(z_i^{(n_l)}\right) a_j^{(l)}.$$
+
+#### Entropia creuada
+
+- Error per a l'última capa:
+
+$$\delta_i^{(n_l)} = \frac{\partial \mathcal{L}}{\partial a_i^{(n_l)}} \, f'\!\left(z_i^{(n_l)}\right) = \left(a_i^{(n_l)} - y_i\right).$$
+
+- Regla d'actualització per a l'última capa:
+
+$$W_{ij}^{(l)} = W_{ij}^{(l)} - \alpha \frac{\partial \mathcal{L}}{\partial W_{ij}^{(l)}} = W_{ij}^{(l)} + \alpha \left(y - a_i^{(n_l)}\right) a_j^{(l)}.$$
+
+## Fonts
+
+- Apunts Xavi Varona
+- http://neuralnetworksanddeeplearning.com
+- https://drive.google.com/viewerng/viewer?url=https://cklixx.people.wm.edu/teaching/math400/Annette-paper.pdf

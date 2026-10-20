@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1206 600" width="2412" height="1200" font-family="Aptos, DejaVu Sans, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker></defs>
+<rect width="1206" height="600" fill="#fff"/>
+<rect x="20" y="70" width="170" height="380" rx="16" fill="#F4F4F4"/>
+<text x="105.0" y="52" font-size="19" text-anchor="middle" fill="#000">Un a un</text>
+<text x="105.0" y="482" font-size="15" text-anchor="middle" fill="#000">Xarxa neuronal</text>
+<text x="105.0" y="504" font-size="15" text-anchor="middle" fill="#000">estàndard</text>
+<rect x="88.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<rect x="88.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="105.0" y1="370" x2="105.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="88.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="105.0" y1="240" x2="105.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="70" width="190" height="380" rx="16" fill="#F4F4F4"/>
+<text x="315.0" y="52" font-size="19" text-anchor="middle" fill="#000">Un a molts</text>
+<text x="315.0" y="482" font-size="15" text-anchor="middle" fill="#000">Imatge →</text>
+<text x="315.0" y="504" font-size="15" text-anchor="middle" fill="#000">seqüència de paraules</text>
+<rect x="240.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<line x1="274.0" y1="271.0" x2="297.0" y2="271.0" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="240.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="257.0" y1="370" x2="257.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="240.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="257.0" y1="240" x2="257.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="298.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<line x1="332.0" y1="271.0" x2="355.0" y2="271.0" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="298.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="315.0" y1="240" x2="315.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="356.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<rect x="356.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="373.0" y1="240" x2="373.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="440" y="70" width="190" height="380" rx="16" fill="#F4F4F4"/>
+<text x="535.0" y="52" font-size="19" text-anchor="middle" fill="#000">Molts a un</text>
+<text x="535.0" y="482" font-size="15" text-anchor="middle" fill="#000">Vídeo → etiqueta</text>
+<text x="535.0" y="504" font-size="15" text-anchor="middle" fill="#000">Anàlisi de sentiment</text>
+<rect x="460.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<line x1="494.0" y1="271.0" x2="517.0" y2="271.0" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="460.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="477.0" y1="370" x2="477.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="518.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<line x1="552.0" y1="271.0" x2="575.0" y2="271.0" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="518.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="535.0" y1="370" x2="535.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="576.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<rect x="576.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="593.0" y1="370" x2="593.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="576.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="593.0" y1="240" x2="593.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="660" y="70" width="306" height="380" rx="16" fill="#F4F4F4"/>
+<text x="813.0" y="36" font-size="19" text-anchor="middle" fill="#000">Molts a molts</text>
+<text x="813.0" y="58" font-size="19" text-anchor="middle" fill="#000">(amb retard)</text>
+<text x="813.0" y="482" font-size="15" text-anchor="middle" fill="#000">Subtitulat de vídeo</text>
+<text x="813.0" y="504" font-size="15" text-anchor="middle" fill="#000">Traducció automàtica</text>
+<rect x="680.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<line x1="714.0" y1="271.0" x2="737.0" y2="271.0" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="680.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="697.0" y1="370" x2="697.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="738.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<line x1="772.0" y1="271.0" x2="795.0" y2="271.0" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="738.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="755.0" y1="370" x2="755.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="796.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<line x1="830.0" y1="271.0" x2="853.0" y2="271.0" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="796.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="813.0" y1="370" x2="813.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="796.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="813.0" y1="240" x2="813.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="854.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<line x1="888.0" y1="271.0" x2="911.0" y2="271.0" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="854.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="871.0" y1="240" x2="871.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="912.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<rect x="912.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="929.0" y1="240" x2="929.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="996" y="70" width="190" height="380" rx="16" fill="#F4F4F4"/>
+<text x="1091.0" y="36" font-size="19" text-anchor="middle" fill="#000">Molts a molts</text>
+<text x="1091.0" y="58" font-size="19" text-anchor="middle" fill="#000">(sincronitzat)</text>
+<text x="1091.0" y="482" font-size="15" text-anchor="middle" fill="#000">Classificació de</text>
+<text x="1091.0" y="504" font-size="15" text-anchor="middle" fill="#000">frames de vídeo</text>
+<rect x="1016.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<line x1="1050.0" y1="271.0" x2="1073.0" y2="271.0" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="1016.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="1033.0" y1="370" x2="1033.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="1016.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="1033.0" y1="240" x2="1033.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="1074.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<line x1="1108.0" y1="271.0" x2="1131.0" y2="271.0" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="1074.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="1091.0" y1="370" x2="1091.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="1074.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="1091.0" y1="240" x2="1091.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="1132.0" y="240" width="34" height="62" rx="4" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<rect x="1132.0" y="370" width="34" height="62" rx="4" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/>
+<line x1="1149.0" y1="370" x2="1149.0" y2="303" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="1132.0" y="110" width="34" height="62" rx="4" fill="#4A86C5" stroke="#24548A" stroke-width="2"/>
+<line x1="1149.0" y1="240" x2="1149.0" y2="173" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<rect x="313.0" y="554" width="16" height="22" rx="3" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="339.0" y="571" font-size="15" fill="#000">Entrada</text>
+<rect x="523.0" y="554" width="16" height="22" rx="3" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/><text x="549.0" y="571" font-size="15" fill="#000">Estat ocult (RNN)</text>
+<rect x="733.0" y="554" width="16" height="22" rx="3" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="759.0" y="571" font-size="15" fill="#000">Sortida</text>
+</svg>

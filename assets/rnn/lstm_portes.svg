@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="1920" height="1120" font-family="Aptos, DejaVu Sans, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker></defs>
+<rect width="960" height="560" fill="#fff"/>
+<rect x="150" y="110" width="680" height="340" rx="20" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2.5"/>
+<rect x="222" y="128" width="96" height="222" rx="12" fill="#ffffff" fill-opacity="0.55" stroke="#E07B1A" stroke-width="2.5" stroke-dasharray="8 5"/>
+<rect x="355" y="128" width="175" height="222" rx="12" fill="#ffffff" fill-opacity="0.55" stroke="#4A86C5" stroke-width="2.5" stroke-dasharray="8 5"/>
+<rect x="572" y="200" width="180" height="150" rx="12" fill="#ffffff" fill-opacity="0.55" stroke="#8B1A2B" stroke-width="2.5" stroke-dasharray="8 5"/>
+<path d="M60,160 L255,160" stroke="#000" stroke-width="2.4" fill="none"/>
+<path d="M285,160 L463,160" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<path d="M495,160 L910,160" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<text x="95" y="148" font-size="18" text-anchor="middle" fill="#000" font-style="italic">C<tspan font-size="12" dy="4" dx="2">t−1</tspan></text>
+<text x="880" y="148" font-size="18" text-anchor="middle" fill="#000" font-style="italic">C<tspan font-size="12" dy="4" dx="2">t</tspan></text>
+<path d="M60,410 L610,410" stroke="#000" stroke-width="2.4" fill="none"/>
+<text x="95" y="398" font-size="18" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="4" dx="2">t−1</tspan></text>
+<path d="M180,490 L180,410" stroke="#000" stroke-width="2.4" fill="none"/>
+<circle cx="180" cy="410" r="4" fill="#000"/>
+<rect x="150" y="490" width="60" height="40" rx="7" fill="#F9C48A" stroke="#E07B1A" stroke-width="2.2"/>
+<text x="180" y="517" font-size="20" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="15" dy="4" dx="2">t</tspan></text>
+<path d="M270,410 L270,338" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<path d="M400,410 L400,338" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<path d="M480,410 L480,338" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<path d="M610,410 L610,338" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<rect x="251.0" y="304" width="38" height="32" rx="4" fill="#9EC3E6" stroke="#24548A" stroke-width="2"/>
+<text x="270" y="327" font-size="20" text-anchor="middle" fill="#000">σ</text>
+<rect x="381.0" y="304" width="38" height="32" rx="4" fill="#9EC3E6" stroke="#24548A" stroke-width="2"/>
+<text x="400" y="327" font-size="20" text-anchor="middle" fill="#000">σ</text>
+<rect x="453.0" y="304" width="54" height="32" rx="4" fill="#9EC3E6" stroke="#24548A" stroke-width="2"/>
+<text x="480" y="327" font-size="17" text-anchor="middle" fill="#000">tanh</text>
+<rect x="591.0" y="304" width="38" height="32" rx="4" fill="#9EC3E6" stroke="#24548A" stroke-width="2"/>
+<text x="610" y="327" font-size="20" text-anchor="middle" fill="#000">σ</text>
+<path d="M270,304 L270,177" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<path d="M400,304 L400,235 L463,235" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<path d="M480,304 L480,252" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<path d="M480,220 L480,177" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<path d="M629,320 L693,320" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<circle cx="710" cy="160" r="4" fill="#000"/>
+<path d="M710,160 L710,221" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<ellipse cx="710" cy="235" rx="25" ry="13" fill="#fff" stroke="#24548A" stroke-width="2"/>
+<text x="710" y="240" font-size="14" text-anchor="middle" fill="#000">tanh</text>
+<path d="M710,248 L710,303" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<path d="M710,335 L710,410 L910,410" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<text x="880" y="398" font-size="18" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="4" dx="2">t</tspan></text>
+<circle cx="770" cy="410" r="4" fill="#000"/>
+<path d="M770,410 L770,62" stroke="#000" stroke-width="2.4" fill="none" marker-end="url(#a)"/>
+<rect x="740" y="20" width="60" height="40" rx="7" fill="#4A86C5" stroke="#24548A" stroke-width="2.2"/>
+<text x="770" y="47" font-size="20" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="15" dy="4" dx="2">t</tspan></text>
+<circle cx="270" cy="160" r="15" fill="#fff" stroke="#24548A" stroke-width="2"/>
+<text x="270" y="166" font-size="20" text-anchor="middle" fill="#000">×</text>
+<circle cx="480" cy="160" r="15" fill="#fff" stroke="#24548A" stroke-width="2"/>
+<text x="480" y="166" font-size="20" text-anchor="middle" fill="#000">+</text>
+<circle cx="480" cy="235" r="15" fill="#fff" stroke="#24548A" stroke-width="2"/>
+<text x="480" y="241" font-size="20" text-anchor="middle" fill="#000">×</text>
+<circle cx="710" cy="320" r="15" fill="#fff" stroke="#24548A" stroke-width="2"/>
+<text x="710" y="326" font-size="20" text-anchor="middle" fill="#000">×</text>
+<text x="260" y="275" font-size="16" text-anchor="end" fill="#000" font-style="italic">f<tspan font-size="12" dy="4" dx="2">t</tspan></text>
+<text x="390" y="275" font-size="16" text-anchor="end" fill="#000" font-style="italic">i<tspan font-size="12" dy="4" dx="2">t</tspan></text>
+<text x="490" y="278" font-size="16" text-anchor="start" fill="#000" font-style="italic">C<tspan font-size="11" dy="4" dx="2">t</tspan></text>
+<text x="494" y="265" font-size="14" text-anchor="start" fill="#000">~</text>
+<text x="662.0" y="310" font-size="16" text-anchor="middle" fill="#000" font-style="italic">o<tspan font-size="12" dy="4" dx="2">t</tspan></text>
+<text x="270" y="478" font-size="16" text-anchor="middle" fill="#000" font-weight="bold">Porta d'oblit</text>
+<text x="440.0" y="478" font-size="16" text-anchor="middle" fill="#000" font-weight="bold">Porta d'entrada</text>
+<text x="660.0" y="478" font-size="16" text-anchor="middle" fill="#000" font-weight="bold">Porta de sortida</text>
+<line x1="230" y1="490" x2="310" y2="490" stroke="#E07B1A" stroke-width="3" stroke-dasharray="8 5"/>
+<line x1="400.0" y1="490" x2="480.0" y2="490" stroke="#4A86C5" stroke-width="3" stroke-dasharray="8 5"/>
+<line x1="620.0" y1="490" x2="700.0" y2="490" stroke="#8B1A2B" stroke-width="3" stroke-dasharray="8 5"/>
+<text x="620" y="148" font-size="15" text-anchor="middle" fill="#000">Estat de la cel·la</text>
+</svg>

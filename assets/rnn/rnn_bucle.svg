@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 500" width="880" height="1000" font-family="Aptos, DejaVu Sans, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker></defs>
+<rect width="440" height="500" fill="#fff"/>
+<!-- sortida -->
+<rect x="170" y="30" width="80" height="56" rx="8" fill="#4A86C5" stroke="#24548A" stroke-width="2.5"/>
+<text x="210" y="66" font-size="24" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="16" dy="6">t</tspan></text>
+<!-- cel·la RNN -->
+<rect x="140" y="170" width="140" height="150" rx="16" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2.5"/>
+<text x="210" y="258" font-size="40" text-anchor="middle" fill="#000">A</text>
+<!-- entrada -->
+<rect x="170" y="404" width="80" height="56" rx="8" fill="#F9C48A" stroke="#E07B1A" stroke-width="2.5"/>
+<text x="210" y="440" font-size="24" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="16" dy="6">t</tspan></text>
+<g stroke="#000" stroke-width="2.5" fill="none">
+  <line x1="210" y1="404" x2="210" y2="323" marker-end="url(#a)"/>
+  <line x1="210" y1="170" x2="210" y2="89" marker-end="url(#a)"/>
+  <!-- bucle: surt per la dreta i torna per l'esquerra passant per sobre -->
+  <path d="M280,285 C370,285 370,205 283,205" marker-end="url(#a)"/>
+</g>
+<text x="362" y="252" font-size="18" fill="#000" font-style="italic">h<tspan font-size="13" dy="5">t−1</tspan></text>
+</svg>

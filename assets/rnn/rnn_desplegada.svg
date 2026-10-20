@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 420" width="2360" height="840" font-family="Aptos, DejaVu Sans, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker></defs>
+<rect width="1180" height="420" fill="#fff"/>
+<rect x="75.0" y="30" width="70" height="48" rx="7" fill="#4A86C5" stroke="#24548A" stroke-width="2.5"/>
+<text x="110" y="61" font-size="22" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="15" dy="6">t</tspan></text>
+<rect x="55.0" y="150" width="110" height="110" rx="14" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2.5"/>
+<text x="110" y="218.0" font-size="36" text-anchor="middle" fill="#000">A</text>
+<rect x="75.0" y="330" width="70" height="48" rx="7" fill="#F9C48A" stroke="#E07B1A" stroke-width="2.5"/>
+<text x="110" y="361" font-size="22" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="15" dy="6">t</tspan></text>
+<line x1="110" y1="330" x2="110" y2="263" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="110" y1="150" x2="110" y2="81" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M165.0,235 C240.0,235 240.0,175 168.0,175" stroke="#000" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+<text x="227.0" y="210" font-size="17" fill="#000" font-style="italic">h<tspan font-size="12" dy="5">t−1</tspan></text>
+<text x="330" y="219.0" font-size="44" text-anchor="middle" fill="#000">=</text>
+<rect x="435.0" y="30" width="70" height="48" rx="7" fill="#4A86C5" stroke="#24548A" stroke-width="2.5"/>
+<text x="470" y="61" font-size="22" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="15" dy="6">1</tspan></text>
+<rect x="415.0" y="150" width="110" height="110" rx="14" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2.5"/>
+<text x="470" y="218.0" font-size="36" text-anchor="middle" fill="#000">A</text>
+<rect x="435.0" y="330" width="70" height="48" rx="7" fill="#F9C48A" stroke="#E07B1A" stroke-width="2.5"/>
+<text x="470" y="361" font-size="22" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="15" dy="6">1</tspan></text>
+<line x1="470" y1="330" x2="470" y2="263" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="470" y1="150" x2="470" y2="81" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="605.0" y="30" width="70" height="48" rx="7" fill="#4A86C5" stroke="#24548A" stroke-width="2.5"/>
+<text x="640" y="61" font-size="22" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="15" dy="6">2</tspan></text>
+<rect x="585.0" y="150" width="110" height="110" rx="14" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2.5"/>
+<text x="640" y="218.0" font-size="36" text-anchor="middle" fill="#000">A</text>
+<rect x="605.0" y="330" width="70" height="48" rx="7" fill="#F9C48A" stroke="#E07B1A" stroke-width="2.5"/>
+<text x="640" y="361" font-size="22" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="15" dy="6">2</tspan></text>
+<line x1="640" y1="330" x2="640" y2="263" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="640" y1="150" x2="640" y2="81" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="775.0" y="30" width="70" height="48" rx="7" fill="#4A86C5" stroke="#24548A" stroke-width="2.5"/>
+<text x="810" y="61" font-size="22" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="15" dy="6">3</tspan></text>
+<rect x="755.0" y="150" width="110" height="110" rx="14" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2.5"/>
+<text x="810" y="218.0" font-size="36" text-anchor="middle" fill="#000">A</text>
+<rect x="775.0" y="330" width="70" height="48" rx="7" fill="#F9C48A" stroke="#E07B1A" stroke-width="2.5"/>
+<text x="810" y="361" font-size="22" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="15" dy="6">3</tspan></text>
+<line x1="810" y1="330" x2="810" y2="263" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="810" y1="150" x2="810" y2="81" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="1045.0" y="30" width="70" height="48" rx="7" fill="#4A86C5" stroke="#24548A" stroke-width="2.5"/>
+<text x="1080" y="61" font-size="22" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="15" dy="6">t</tspan></text>
+<rect x="1025.0" y="150" width="110" height="110" rx="14" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2.5"/>
+<text x="1080" y="218.0" font-size="36" text-anchor="middle" fill="#000">A</text>
+<rect x="1045.0" y="330" width="70" height="48" rx="7" fill="#F9C48A" stroke="#E07B1A" stroke-width="2.5"/>
+<text x="1080" y="361" font-size="22" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="15" dy="6">t</tspan></text>
+<line x1="1080" y1="330" x2="1080" y2="263" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="1080" y1="150" x2="1080" y2="81" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="375.0" y1="205.0" x2="412.0" y2="205.0" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="387.0" y="193.0" font-size="18" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5">0</tspan></text>
+<line x1="525.0" y1="205.0" x2="582.0" y2="205.0" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="695.0" y1="205.0" x2="752.0" y2="205.0" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="865.0" y1="205.0" x2="895.0" y2="205.0" stroke="#000" stroke-width="2.5"/>
+<text x="945.0" y="213.0" font-size="30" text-anchor="middle" fill="#000">…</text>
+<line x1="995.0" y1="205.0" x2="1022.0" y2="205.0" stroke="#000" stroke-width="2.5" marker-end="url(#a)"/>
+</svg>

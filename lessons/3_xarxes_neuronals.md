@@ -3,27 +3,27 @@
 El cervell humà està format per una substància grisa que conté aproximadament 100.000 milions de neurones, cèl·lules nervioses especialitzades en la transmissió d'informació entre el cervell i la resta del cos, interconnectades formant una xarxa de comunicació d'una complexitat extraordinària.
 
 
-![Connexions entre neurones](../assets/sinapsi.png){width=300px}
+![Connexions entre neurones](../assets/mlp/sinapsi.png){width=300px}
 
-Com es veu a la figura anterior, cada neurona té múltiples connexions amb altres cèl·lules per mitjà de la sinapsi, que és una reacció química entre el senyal elèctric generat al nucli de la cèl·lula, que quan rep prou connexions per mitjà d'unes terminacions denominades dendrites, es transmet per l'axó cap a les neurones següents.
+Com es veu a la figura, una neurona està formada per tres parts principals. Les dendrites són les terminacions que reben els senyals d'altres neurones. El cos cel·lular (soma) integra tots els senyals rebuts i, si en conjunt superen un cert llindar, la neurona s'activa i genera un impuls elèctric. Aquest impuls es transmet per l'axó fins a les seves terminals, que es connecten amb les dendrites de les neurones següents mitjançant les sinapsis. A les sinapsis el senyal passa d'una neurona a l'altra per via química, i la seva intensitat pot variar: hi ha connexions més fortes i més febles.
 
 L'any 1958, al Laboratori Aeronàutic de Cornell, el psicòleg Frank Rosenblatt va crear el **Perceptró** inspirant-se en el funcionament de les neurones (Rosenblatt, 1958). Aquest model es basa en la definició d'una neurona artificial:
 
-El valor de les entrades, $\textbf{x}$, es pondera per uns pesos, $\textbf{w}$, i s'acumula al nucli de la neurona artificial per mitjà de la funció neta:
+El valor de les entrades, $\mathbf{x}=(x_1, x_2,…, x_n)$, es pondera per uns pesos, $\textbf{w}=(w_1, w_2,…, w_n)$, i s'acumula al nucli de la neurona artificial per mitjà de la entrada neta:
 
 $$net = \sum_{j=1}^{n} w_j x_j,$$
 
-quan l'entrada neta és major o igual que un valor de llindar, $\theta$, la sortida, $y$, és igual a $1$; si no, la sortida valdria $0$.
+quan aquesta és major o igual que un valor de llindar, $\theta$, la sortida, $y$, és igual a $1$; si no, la sortida valdria $0$.
 
 Per entendre el seu funcionament, vegem primer un exemple de com funcionaria un Perceptró com una porta lògica AND. Si recordem la definició de la Regressió logística del capítol anterior:
 
 $$\hat{y} = f\left(\sum_{j=0}^{n} w_j x_j\right), \quad \text{on} \quad f(z) = \frac{1}{1+e^{-z}},$$
 
-podríem veure el Perceptró com un model de classificació lineal on la funció d'activació seria la funció llindar en lloc de la Regressió logística:
+podríem veure el Perceptró com un model de classificació on la funció d'activació seria la funció llindar en lloc de la Regressió logística:
 
 $$\hat{y} = f\left(\sum_{j=1}^{n} w_j x_j\right), \quad \text{on} \quad f(z) = \begin{cases} 1 & \text{si } z \geq \theta \\ 0 & \text{si } z < \theta \end{cases}.$$
 
-Aquesta expressió es pot modificar per convertir el llindar en el valor biax d'aquest model mitjançant la convenció $b = -\theta$, $x_0 = 1$, el model queda de la següent manera:
+Aquesta expressió es pot modificar per convertir el llindar en el valor biaix d'aquest model mitjançant la convenció $b = -\theta$, $x_0 = 1$, el model queda de la següent manera:
 
 $$\hat{y} = \begin{cases} 1 & \text{si } \displaystyle\sum_{j=0}^{n} w_j x_j \geq 0 \\ 0 & \text{si no} \end{cases} $$
 
@@ -31,9 +31,9 @@ Per actualitzar els pesos mitjançant el descens del gradient, necessitem calcul
 
 En lloc de derivar la funció llindar, Rosenblatt va proposar una regla d'actualització directa basada en l'error comès:
 
-$$w_j = w_j + \eta (y - \hat{y}) \cdot x_j, $$
+$$w_j = w_j + \alpha (y - \hat{y}) \cdot x_j, $$
 
-Aquesta regla té una interpretació intuïtiva molt clara. Si el model encerta la predicció, $(y - \hat{y}) = 0$ els pesos no es modifiquen. Si el model prediu $\hat{y} = 0$ però la resposta correcta és $y = 1$, aleshores $(y - \hat{y}) = 1$ i els pesos augmenten en la direcció de $x_j$. Si el model prediu $\hat{y} = 1$ però la resposta correcta és $y = 0$, aleshores $(y - \hat{y}) = -1$ i els pesos disminueixen. Tal com succeeix en els models lineals, l'hiperparàmetre $\eta$ té un valor major a zero i serveix per controlar com s'actualitza el pes $w_j$ respecte a l'error. Aquesta és la mateixa regla que la dels models lineals descrits anteriorment.
+Aquesta regla té una interpretació intuïtiva molt clara. Si el model encerta la predicció, $(y - \hat{y}) = 0$ els pesos no es modifiquen. Si el model prediu $\hat{y} = 0$ però la resposta correcta és $y = 1$, aleshores $(y - \hat{y}) = 1$ i els pesos augmenten en la direcció de $x_j$. Si el model prediu $\hat{y} = 1$ però la resposta correcta és $y = 0$, aleshores $(y - \hat{y}) = -1$ i els pesos disminueixen. Tal com succeeix en els models lineals, l'hiperparàmetre $\alpha$ té un valor major a zero i serveix per controlar com s'actualitza el pes $w_j$ respecte a l'error. Aquesta és la mateixa regla que la dels models lineals descrits anteriorment.
 
  A partir del model teòric del Perceptró, es va construir el **Perceptron Mark 1**, un ordinador dissenyat per al reconeixement d'imatges que tenia una matriu de 400 fotocèl·lules connectades aleatòriament a una implementació electrònica de les neurones artificials; els pesos es codificaven en potenciòmetres i les actualitzacions dels pesos durant l'aprenentatge es realitzaven mitjançant motors elèctrics.
 
@@ -41,16 +41,56 @@ Aquesta regla té una interpretació intuïtiva molt clara. Si el model encerta 
 >
 > Mikel Olazarán (1996). "A Sociological Study of the Official History of the Perceptrons Controversy". *Social Studies of Science*. 26(3): 611–659.
 
-Tanmateix, malgrat l'expectació generada per aquest model, la publicació del llibre *Perceptrons* (Minski and Papert, 1969) va provocar un abandonament en el finançament de la recerca en xarxes neuronals artificials. En aquest llibre es demostrava que el Perceptró no era capaç de resoldre un problema senzill com el de la porta lògica XOR.
+Tanmateix, malgrat l'expectació generada per aquest model, la publicació del llibre *Perceptrons* (Minsky and Papert, 1969) va provocar un abandonament en el finançament de la recerca en xarxes neuronals artificials. En aquest llibre es demostrava que el Perceptró no era capaç de resoldre un problema senzill com el de la porta lògica XOR.
+
+Si considerem el següent perceptró
+
+$$\hat{y} = \begin{cases} 1 & \text{si } w_1 x_1 + w_2 x_2 + b \geq 0 \\ 0 & \text{si no} \end{cases},$$
+
+a més, suposem que aquest pot resoldre la porta XOR, ha de complir la taula de veritat següent:
+
+| $x_1$ | $x_2$ | $y$ |
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+Cada fila imposa una desigualtat sobre els paràmetres:
+
+$$
+\begin{aligned}
+(0,0) \rightarrow 0: &\quad b < 0 \\
+(0,1) \rightarrow 1: &\quad w_2 + b \geq 0 \\
+(1,0) \rightarrow 1: &\quad w_1 + b \geq 0 \\
+(1,1) \rightarrow 0: &\quad w_1 + w_2 + b < 0
+\end{aligned}
+$$
+
+Sumant la segona i la tercera desigualtat obtenim:
+
+$$w_1 + w_2 + 2b \geq 0 \;\Rightarrow\; w_1 + w_2 \geq -2b$$
+
+Per altra banda, la quarta desigualtat diu:
+
+$$w_1 + w_2 < -b$$
+
+Combinant les dues:
+
+$$-2b \leq w_1 + w_2 < -b \;\Rightarrow\; -2b < -b \;\Rightarrow\; b > 0$$
+
+Però la primera desigualtat exigia $b < 0$. Hem arribat a una contradicció: no existeix cap combinació de $w_1$, $w_2$ i $b$ que compleixi les quatre condicions alhora, i per tant un Perceptró no pot resoldre la porta XOR.
+
+Geomètricament, això vol dir que no hi ha cap recta $w_1 x_1 + w_2 x_2 + b = 0$ que deixi els punts $(0,1)$ i $(1,0)$ a un costat i els punts $(0,0)$ i $(1,1)$ a l'altre.
 
 
-![Problema XOR.](../assets/xor.png){width=300px}
+![Problema XOR.](../assets/mlp/xor.png){width=300px}
 
 Com es pot observar a la figura anterior, s'arriba a una contradicció en la derivació matemàtica del problema. Si ens fixem en la seva representació gràfica, podem comprovar com no és possible separar els exemples de les dues classes mitjançant una única recta.
 
 En general, els models lineals de classificació, com el Perceptró, només poden resoldre aplicacions de classificació on els exemples de cada classe puguin separar-se per un hiperplà (una recta $n$-dimensional). Tanmateix, si ens fixem en la representació gràfica de la funció XOR, si tinguéssim la capacitat de definir dues rectes de separació, és a dir, definir dos Perceptrons, podríem resoldre aquest problema de manera més senzilla.
 
-De nou, inspirant-se en el comportament del cervell humà, on les neurones no actuen de manera aïllada sinó organitzades en capes interconnectades, la solució natural a la limitació del Perceptró simple és apilar diverses capes de neurones, donant lloc al Perceptró multicapa. Amb aquesta arquitectura, els problemes linealment no separables poden resoldre's, ja que cada capa addicional permet aprendre representacions cada cop més complexes de les dades. Tanmateix, aquest avenç teòric va quedar paralitzat durant gairebé dues dècades: no va ser fins al 1986 que Rumelhart, Hinton i Williams van publicar l'algoritme backpropagation, que per primera vegada oferia una regla d'aprenentatge pràctica i eficient per a xarxes de múltiples capes. Aquest algoritme, que veurem en el següent tema, és la pedra angular de l'aprenentatge profund modern.
+De nou, inspirant-se en el comportament del cervell humà, on les neurones no actuen de manera aïllada sinó organitzades en capes interconnectades, la solució natural a la limitació del Perceptró simple és apilar diverses capes de neurones, donant lloc al Perceptró multicapa. Amb aquesta arquitectura, els problemes linealment no separables poden resoldre's, ja que cada capa addicional permet aprendre representacions cada cop més complexes de les dades. Tanmateix, aquest avenç teòric va quedar paralitzat durant gairebé dues dècades: no va ser fins al 1986 que Rumelhart, Hinton i Williams van publicar l'algoritme backpropagation, que per primera vegada oferia una regla d'aprenentatge pràctica i eficient per a xarxes de múltiples capes. Aquest algoritme, que veurem més endavant, és la pedra angular de l'aprenentatge profund modern.
 
 ## El Perceptró multicapa
 
@@ -59,7 +99,7 @@ De la mateixa manera que el cervell humà no funciona amb una única neurona aï
 A continuació tenim l'esquema general del perceptró multicapa:
 
 
-![Xarxa neuronal multi capa.](../assets/xarxa_neuronal_cat.png){width=300px}
+![Xarxa neuronal multi capa.](../assets/mlp/xarxa_neuronal_cat.png){width=300px}
 
 
 En aquesta figura, hem usat cercles blaus per indicar les entrades a la xarxa. Els cercles etiquetats com a $+1$ són les unitats associades al valor del biaix, que ja havíem vist en els models lineals. La capa més a l'esquerra de la xarxa es denomina **capa d'entrada**, i la capa més a la dreta, la **capa de sortida** que, en aquest exemple, només té una neurona. La capa intermèdia de neurones es denomina **capa oculta**, perquè els seus valors no són observables durant l'entrenament. Per definir l'arquitectura del nostre model podem dir que la nostra xarxa neuronal té 3 unitats d'entrada (sense comptar la unitat de biaix), 3 unitats ocultes i 1 unitat de sortida.
@@ -78,7 +118,7 @@ En general, recordant que també usem $a_i^{(1)} = x_i$ per denotar els valors d
 
 $$z_i^{(l+1)} = \sum_{j=1}^{s_l} W_{ij} \, a_j^{(l)} + b_i^{(l)},$$
 
-$$a_i^{(l)} = f\!\left(z_i^{(l)}\right),$$
+$$a_i^{(l+1)} = f\!\left(z_i^{(l+1)}\right),$$
 
 on $s_l$ és el nombre d'unitats de la capa $l$, i $f$ és la funció d'activació. Aplicant de manera recursiva aquestes fórmules podem calcular el valor de les unitats de sortida de qualsevol arquitectura de xarxa neuronal. Tots aquests càlculs es poden realitzar de manera paral·lela com a producte de matrius i vectors, que podem generalitzar usant el concepte de tensor, origen de l'expansió d'aquests models gràcies a l'aparició de plataformes de maquinari (com les GPU de NVIDIA) i programari (com les biblioteques TensorFlow o Pytorch) que faciliten l'aplicació i la programació d'aquests models.
 
@@ -92,13 +132,13 @@ La neurona sigmoide substitueix la funció escaló per la funció sigmoide de ma
 
 $$\hat{y} = \sigma\!\left(\sum_j w_j x_j + b\right) = \frac{1}{1+\exp\!\left(-\displaystyle\sum_j w_j x_j - b\right)}.$$
 
-A diferència del Perceptró, les entrades $x_j$ poden prendre qualsevol valor real entre $0$ i $1$, i la sortida també és un valor continu entre $0$ i $1$.
+A diferència del Perceptró, la sortida també és un valor continu entre $0$ i $1$.
 
-La clau no és la forma algebraica concreta de $\sigma$, sinó la seva suavitat. Aquesta és una versió contínua i diferenciable de la funció escaló. Això té una conseqüència matemàtica fonamental: un canvi petit $\Delta w_j$ en els pesos i $\Delta b$ en el bias produeix un canvi petit i predible en la sortida:
+La clau no és la forma algebraica concreta de $\sigma$, sinó la seva suavitat. Aquesta és una versió contínua i diferenciable de la funció escaló. Això té una conseqüència matemàtica fonamental: un canvi petit $\Delta w_j$ en els pesos i $\Delta b$ en el biaix produeix un canvi petit i predible en la sortida:
 
 $$\Delta \hat{y} \approx \sum_j \frac{\partial \hat{y}}{\partial w_j} \Delta w_j + \frac{\partial \hat{y}}{\partial b} \Delta b$$
 
-Aquesta expressió diu que $\Delta \hat{y}$ és una funció lineal dels canvis $\Delta w_j$ i $\Delta b$. Això fa possible calcular exactament quan i en quina direcció cal modificar cada pes per aconseguir el canvi desitjat en la sortida, que és precisament el que permet aprendre.
+Aquesta expressió diu que $\Delta \hat{y}$ és una funció lineal dels canvis $\Delta w_j$ i $\Delta b$. Això fa possible calcular quan i en quina direcció cal modificar cada pes per aconseguir el canvi desitjat en la sortida, que és precisament el que permet aprendre.
 
 Per altra banda, com que la sortida de la neurona sigmoide és un valor continu entre $0$ i $1$, es pot interpretar com una probabilitat. En classificació binària, es pot fixar un llindar de decisió (habitualment $0.5$) per obtenir una predicció discreta:
 
@@ -147,7 +187,7 @@ En segon lloc, cal calcular la suma total:
 
 $$\sum_{k=1}^{5} e^{z_k} = 8.166 + 3.669 + 1.649 + 0.449 + 24.533 = 38.466$$
 
-Finalment, Dividir cada $e^{z_k}$ per la suma
+Finalment, dividir cada $e^{z_k}$ per la suma
 
 $$f(z)_1 = \frac{8.166}{38.466} = 0.212$$
 
@@ -175,17 +215,16 @@ El model assigna una probabilitat del $63.8\%$ a la classe 4, que seria la predi
 
 4. **Funció Lineal Rectificada** (*ReLU*):
 
-Recerques recents han trobat una funció d'activació diferent, la ReLU (per les seves sigles en anglès), que funciona millor a la pràctica a les capes ocultes de les xarxes neuronals profundes. Aquesta funció d'activació és diferent de la sigmoide i la *tanh* perquè no està limitada ni és contínuament diferenciable, que és una de les condicions "teòriques" que han de complir aquestes funcions per poder ser usades en el descens del gradient.
+La funció d'activació lineal rectificada (ReLU, per les seves sigles en anglès) va ser proposada per a xarxes neuronals per Nair i Hinton (2010), i va demostrar funcionar millor a la pràctica que la sigmoide i la tanh a les capes ocultes de les xarxes neuronals profundes (Glorot, Bordes i Bengio, 2011).Aquesta funció d'activació és diferent de la sigmoide i la *tanh* perquè no està limitada ni és contínuament diferenciable, que és una de les condicions "teòriques" que han de complir aquestes funcions per poder ser usades en el descens del gradient.
 
 
 
-$$f(z) = \max(0, z) = \begin{cases} z & \text{si } z > 0 \\ 0 & \text{si no} \end{cases}, \qquad f'(z) = \begin{cases} 1 & \text{si } z > 0 \\ 0 & \text{si } z < 0 \end{cases}$$
+$$f(z) = \max(0, z) = \begin{cases} z & \text{si } z > 0 \\ 0 & \text{si no} \end{cases}, \qquad f'(z) = \begin{cases} 1 & \text{si } z > 0 \\ 0 & \text{si } z < 0 \end{cases}.$$
 
 Com podem veure, en el cas de $z = 0$, la derivada pot ser $0$ o $1$ indistintament. En la pràctica, les implementacions de les biblioteques (PyTorch o TensorFlow) simplement trien un valor concret per convenció.
 
 
 ### Funcions de pèrdua
-
 
 
 Tal com hem explicat al capítol anterior amb els models lineals. Per mesurar l'error, cal una funció de pèrdua. La funció de pèrdua indica a la màquina com de lluny està la combinació de pesos i biaixos de la solució òptima. Hi ha moltes funcions de pèrdua que es poden usar en xarxes neuronals; l'error quadràtic mitjà (_Mean Squared Error_, MSE) i l'entropia creuada (_Cross Entropy Loss_) són dues de les més habituals.
@@ -236,13 +275,13 @@ $$\delta_i^{(l)} = \left(\sum_{k=1}^{s_{l+1}} W_{ki}^{(l)} \, \delta_k^{(l+1)}\r
 
 3. Finalment, una vegada calculats tots els errors de totes les unitats, les regles d'ajust de tots els pesos i biaixos de la xarxa neuronal serien:
 
-$$W_{ij}^{(l)} = W_{ij}^{(l)} - \eta \, a_j^{(l)} \, \delta_i^{(l+1)},$$
+$$W_{ij}^{(l)} = W_{ij}^{(l)} - \alpha \, a_j^{(l)} \, \delta_i^{(l+1)},$$
 
-$$b_i^{(l)} = b_i^{(l)} - \eta \, \delta_i^{(l+1)}.$$
+$$b_i^{(l)} = b_i^{(l)} - \alpha \, \delta_i^{(l+1)}.$$
 
 A la figura següent es pot veure de manera gràfica com el càlcul dels termes d'error de cada unitat es calcula de manera inversa al càlcul de la predicció, començant per l'error a l'última capa (que podem calcular fàcilment a partir de la funció de pèrdua) fins als termes d'error de la primera capa oculta.
 
-![Lògica backpropagation](../assets/mlp_forward_backward.png){width=200}
+![Lògica backpropagation](../assets/mlp/mlp_forward_backward.png){width=200}
 
 
 

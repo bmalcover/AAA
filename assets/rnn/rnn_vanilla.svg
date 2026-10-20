@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="1800" height="1040" font-family="Aptos, DejaVu Sans, Arial, sans-serif">
+  <defs>
+    <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+    </marker>
+    <marker id="flc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4A86C5"/>
+    </marker>
+  </defs>
+  <rect width="900" height="520" fill="#ffffff"/>
+
+  <!-- Mòduls laterals (atenuats) -->
+  <g>
+    <rect x="60" y="100" width="240" height="190" rx="18" fill="#CFE3F5" stroke="#4A86C5" opacity="0.9" stroke-width="2"/>
+    <text x="180" y="215" font-size="52" text-anchor="middle" fill="#000">A</text>
+    <rect x="600" y="100" width="240" height="190" rx="18" fill="#CFE3F5" stroke="#4A86C5" opacity="0.9" stroke-width="2"/>
+    <text x="720" y="215" font-size="52" text-anchor="middle" fill="#000">A</text>
+  </g>
+
+  <!-- Mòdul central -->
+  <rect x="330" y="100" width="240" height="190" rx="18" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2.5"/>
+
+  <!-- Entrades x -->
+  <g stroke="#000" stroke-width="2.5" fill="none">
+    <line x1="180" y1="372" x2="180" y2="292" marker-end="url(#fl)"/>
+    <line x1="450" y1="372" x2="450" y2="252"/>
+    <line x1="720" y1="372" x2="720" y2="292" marker-end="url(#fl)"/>
+  </g>
+
+  <!-- Estat ocult: entre mòduls -->
+  <g stroke="#000" stroke-width="2.5" fill="none">
+    <line x1="20" y1="140" x2="58" y2="140" marker-end="url(#fl)"/>
+    <line x1="300" y1="140" x2="380" y2="140"/>
+    <!-- dins del mòdul central: h_{t-1} baixa i es concatena amb x_t -->
+    <path d="M380,140 L380,250 L450,250"/>
+    <!-- concatenació cap a tanh -->
+    <line x1="450" y1="252" x2="450" y2="232" marker-end="url(#fl)"/>
+    <!-- sortida de tanh -->
+    <path d="M450,204 L450,140 L570,140"/>
+    <line x1="570" y1="140" x2="598" y2="140" marker-end="url(#fl)"/>
+    <line x1="840" y1="140" x2="880" y2="140" marker-end="url(#fl)"/>
+    <!-- còpia cap a la sortida h_t -->
+    <line x1="520" y1="140" x2="520" y2="72" marker-end="url(#fl)"/>
+    <line x1="250" y1="100" x2="250" y2="72" marker-end="url(#fl)"/>
+    <line x1="790" y1="100" x2="790" y2="72" marker-end="url(#fl)"/>
+  </g>
+  <circle cx="520" cy="140" r="4" fill="#000"/>
+
+  <!-- Capa tanh -->
+  <rect x="418" y="204" width="64" height="28" fill="#9EC3E6" stroke="#24548A" stroke-width="2" rx="4"/>
+  <text x="450" y="223" font-size="15" text-anchor="middle" fill="#000">tanh</text>
+
+  <!-- Etiquetes de l'estat ocult -->
+  <text x="330" y="128" font-size="17" text-anchor="middle" fill="#000">hₜ₋₁</text>
+  <text x="585" y="128" font-size="17" text-anchor="middle" fill="#000">hₜ</text>
+
+  <!-- Cercles de sortida h -->
+  <g stroke="#000" stroke-width="2">
+    <circle cx="250" cy="50" r="22" fill="#4A86C5" stroke="#24548A"/>
+    <circle cx="520" cy="50" r="22" fill="#4A86C5" stroke="#24548A"/>
+    <circle cx="790" cy="50" r="22" fill="#4A86C5" stroke="#24548A"/>
+  </g>
+  <g font-size="19" text-anchor="middle" fill="#000">
+    <text x="250" y="57" font-size="16">hₜ₋₁</text>
+    <text x="520" y="57">hₜ</text>
+    <text x="790" y="57" font-size="16">hₜ₊₁</text>
+  </g>
+
+  <!-- Cercles d'entrada x -->
+  <g stroke="#000" stroke-width="2">
+    <circle cx="180" cy="394" r="22" fill="#F9C48A" stroke="#E07B1A"/>
+    <circle cx="450" cy="394" r="22" fill="#F9C48A" stroke="#E07B1A"/>
+    <circle cx="720" cy="394" r="22" fill="#F9C48A" stroke="#E07B1A"/>
+  </g>
+  <g font-size="19" text-anchor="middle" fill="#000">
+    <text x="180" y="401" font-size="16">xₜ₋₁</text>
+    <text x="450" y="401">xₜ</text>
+    <text x="720" y="401" font-size="16">xₜ₊₁</text>
+  </g>
+
+  <!-- Equació -->
+  <text x="450" y="458" font-size="22" text-anchor="middle" fill="#000" font-style="italic">hₜ = tanh(Wₕₕ hₜ₋₁ + Wₓₕ xₜ + bₕ)</text>
+
+  <!-- Llegenda -->
+  <g font-size="13" fill="#000">
+    <rect x="150" y="485" width="30" height="16" fill="#9EC3E6" stroke="#24548A" stroke-width="1.5" rx="3"/>
+    <text x="188" y="498">Capa de xarxa neuronal</text>
+    <line x1="370" y1="493" x2="410" y2="493" stroke="#000" stroke-width="2" marker-end="url(#fl)"/>
+    <text x="418" y="498">Transferència de vector</text>
+    <path d="M600,485 L615,493 L600,501 M615,493 L640,493" stroke="#000" stroke-width="2" fill="none"/>
+    <text x="648" y="498">Concatenació</text>
+  </g>
+</svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 420" width="2300" height="840" font-family="Aptos, DejaVu Sans, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker></defs>
+<rect width="1150" height="420" fill="#fff"/>
+<g opacity="0.3"><rect x="41.0" y="90" width="58" height="40" rx="6" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="70" y="117" font-size="19" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5" dx="2.5">0</tspan></text></g>
+<line x1="70" y1="180" x2="70" y2="133" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<rect x="38.0" y="180" width="64" height="64" rx="10" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<text x="70" y="222.0" font-size="28" text-anchor="middle" fill="#000">A</text>
+<g opacity="0.3"><rect x="41.0" y="300" width="58" height="40" rx="6" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="70" y="327" font-size="19" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="12" dy="5" dx="2.5">0</tspan></text></g>
+<line x1="70" y1="300" x2="70" y2="247" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<text x="70" y="368" font-size="15" text-anchor="middle" fill="#000" opacity="0.3">El</text>
+<line x1="102.0" y1="212.0" x2="127.0" y2="212.0" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<g opacity="0.3"><rect x="133.0" y="90" width="58" height="40" rx="6" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="162" y="117" font-size="19" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5" dx="2.5">1</tspan></text></g>
+<line x1="162" y1="180" x2="162" y2="133" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<rect x="130.0" y="180" width="64" height="64" rx="10" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<text x="162" y="222.0" font-size="28" text-anchor="middle" fill="#000">A</text>
+<g opacity="1"><rect x="133.0" y="300" width="58" height="40" rx="6" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="162" y="327" font-size="19" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="12" dy="5" dx="2.5">1</tspan></text></g>
+<line x1="162" y1="300" x2="162" y2="247" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<text x="162" y="368" font-size="15" text-anchor="middle" fill="#000" opacity="1">cel</text>
+<line x1="194.0" y1="212.0" x2="219.0" y2="212.0" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<g opacity="0.3"><rect x="225.0" y="90" width="58" height="40" rx="6" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="254" y="117" font-size="19" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5" dx="2.5">2</tspan></text></g>
+<line x1="254" y1="180" x2="254" y2="133" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<rect x="222.0" y="180" width="64" height="64" rx="10" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<text x="254" y="222.0" font-size="28" text-anchor="middle" fill="#000">A</text>
+<g opacity="0.3"><rect x="225.0" y="300" width="58" height="40" rx="6" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="254" y="327" font-size="19" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="12" dy="5" dx="2.5">2</tspan></text></g>
+<line x1="254" y1="300" x2="254" y2="247" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<text x="254" y="368" font-size="15" text-anchor="middle" fill="#000" opacity="0.3">és</text>
+<line x1="286.0" y1="212.0" x2="311.0" y2="212.0" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<g opacity="0.3"><rect x="317.0" y="90" width="58" height="40" rx="6" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="346" y="117" font-size="19" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5" dx="2.5">3</tspan></text></g>
+<line x1="346" y1="180" x2="346" y2="133" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<rect x="314.0" y="180" width="64" height="64" rx="10" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<text x="346" y="222.0" font-size="28" text-anchor="middle" fill="#000">A</text>
+<g opacity="0.3"><rect x="317.0" y="300" width="58" height="40" rx="6" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="346" y="327" font-size="19" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="12" dy="5" dx="2.5">3</tspan></text></g>
+<line x1="346" y1="300" x2="346" y2="247" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<text x="346" y="368" font-size="15" text-anchor="middle" fill="#000" opacity="0.3">de</text>
+<line x1="378.0" y1="212.0" x2="403.0" y2="212.0" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<g opacity="1"><rect x="409.0" y="90" width="58" height="40" rx="6" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="438" y="117" font-size="19" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5" dx="2.5">4</tspan></text></g>
+<line x1="438" y1="180" x2="438" y2="133" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<rect x="406.0" y="180" width="64" height="64" rx="10" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<text x="438" y="222.0" font-size="28" text-anchor="middle" fill="#000">A</text>
+<g opacity="1"><rect x="409.0" y="300" width="58" height="40" rx="6" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="438" y="327" font-size="19" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="12" dy="5" dx="2.5">4</tspan></text></g>
+<line x1="438" y1="300" x2="438" y2="247" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<text x="438" y="368" font-size="15" text-anchor="middle" fill="#000" opacity="1">color</text>
+<text x="254.0" y="40" font-size="20" text-anchor="middle" fill="#000">Dependència a curt termini</text>
+<text x="438" y="76" font-size="16" text-anchor="middle" fill="#000" font-weight="bold">blau</text>
+<line x1="560" y1="30" x2="560" y2="400" stroke="#BBBBBB" stroke-width="1.5" stroke-dasharray="6 6"/>
+<g opacity="0.3"><rect x="601.0" y="90" width="58" height="40" rx="6" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="630" y="117" font-size="19" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5" dx="2.5">0</tspan></text></g>
+<line x1="630" y1="180" x2="630" y2="133" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<rect x="598.0" y="180" width="64" height="64" rx="10" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<text x="630" y="222.0" font-size="28" text-anchor="middle" fill="#000">A</text>
+<g opacity="0.3"><rect x="601.0" y="300" width="58" height="40" rx="6" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="630" y="327" font-size="19" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="12" dy="5" dx="2.5">0</tspan></text></g>
+<line x1="630" y1="300" x2="630" y2="247" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<text x="630" y="368" font-size="15" text-anchor="middle" fill="#000" opacity="0.3">M'agrada</text>
+<line x1="662.0" y1="212.0" x2="687.0" y2="212.0" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<g opacity="0.3"><rect x="693.0" y="90" width="58" height="40" rx="6" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="722" y="117" font-size="19" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5" dx="2.5">1</tspan></text></g>
+<line x1="722" y1="180" x2="722" y2="133" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<rect x="690.0" y="180" width="64" height="64" rx="10" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<text x="722" y="222.0" font-size="28" text-anchor="middle" fill="#000">A</text>
+<g opacity="1"><rect x="693.0" y="300" width="58" height="40" rx="6" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="722" y="327" font-size="19" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="12" dy="5" dx="2.5">1</tspan></text></g>
+<line x1="722" y1="300" x2="722" y2="247" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<text x="722" y="368" font-size="15" text-anchor="middle" fill="#000" opacity="1">el mar</text>
+<line x1="754.0" y1="212.0" x2="784.0" y2="212.0" stroke="#000" stroke-width="2.2"/>
+<text x="803.0" y="219.0" font-size="26" text-anchor="middle" fill="#000">…</text>
+<line x1="822.0" y1="212.0" x2="849.0" y2="212.0" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<g opacity="0.3"><rect x="855.0" y="90" width="58" height="40" rx="6" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="884" y="117" font-size="19" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5" dx="2.5">t−1</tspan></text></g>
+<line x1="884" y1="180" x2="884" y2="133" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<rect x="852.0" y="180" width="64" height="64" rx="10" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<text x="884" y="222.0" font-size="28" text-anchor="middle" fill="#000">A</text>
+<g opacity="0.3"><rect x="855.0" y="300" width="58" height="40" rx="6" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="884" y="327" font-size="19" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="12" dy="5" dx="2.5">t−1</tspan></text></g>
+<line x1="884" y1="300" x2="884" y2="247" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<text x="884" y="368" font-size="15" text-anchor="middle" fill="#000" opacity="0.3">color</text>
+<line x1="916.0" y1="212.0" x2="941.0" y2="212.0" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<g opacity="0.3"><rect x="947.0" y="90" width="58" height="40" rx="6" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="976" y="117" font-size="19" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5" dx="2.5">t</tspan></text></g>
+<line x1="976" y1="180" x2="976" y2="133" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<rect x="944.0" y="180" width="64" height="64" rx="10" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<text x="976" y="222.0" font-size="28" text-anchor="middle" fill="#000">A</text>
+<g opacity="0.3"><rect x="947.0" y="300" width="58" height="40" rx="6" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="976" y="327" font-size="19" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="12" dy="5" dx="2.5">t</tspan></text></g>
+<line x1="976" y1="300" x2="976" y2="247" stroke="#000" stroke-width="2.2" opacity="0.3" marker-end="url(#a)"/>
+<text x="976" y="368" font-size="15" text-anchor="middle" fill="#000" opacity="0.3">preferit</text>
+<line x1="1008.0" y1="212.0" x2="1033.0" y2="212.0" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<g opacity="1"><rect x="1039.0" y="90" width="58" height="40" rx="6" fill="#4A86C5" stroke="#24548A" stroke-width="2"/><text x="1068" y="117" font-size="19" text-anchor="middle" fill="#000" font-style="italic">h<tspan font-size="12" dy="5" dx="2.5">t+1</tspan></text></g>
+<line x1="1068" y1="180" x2="1068" y2="133" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<rect x="1036.0" y="180" width="64" height="64" rx="10" fill="#CFE3F5" stroke="#4A86C5" stroke-width="2"/>
+<text x="1068" y="222.0" font-size="28" text-anchor="middle" fill="#000">A</text>
+<g opacity="1"><rect x="1039.0" y="300" width="58" height="40" rx="6" fill="#F9C48A" stroke="#E07B1A" stroke-width="2"/><text x="1068" y="327" font-size="19" text-anchor="middle" fill="#000" font-style="italic">x<tspan font-size="12" dy="5" dx="2.5">t+1</tspan></text></g>
+<line x1="1068" y1="300" x2="1068" y2="247" stroke="#000" stroke-width="2.2" opacity="1" marker-end="url(#a)"/>
+<text x="1068" y="368" font-size="15" text-anchor="middle" fill="#000" opacity="1">és el</text>
+<text x="849.0" y="40" font-size="20" text-anchor="middle" fill="#000">Dependència a llarg termini</text>
+<text x="1068" y="76" font-size="16" text-anchor="middle" fill="#000" font-weight="bold">blau</text>
+</svg>

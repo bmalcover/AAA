@@ -79,7 +79,7 @@ A causa de la seva naturalesa recurrent, les RNN necessiten una adaptació de l'
 
 $$J = \sum_{t=1}^{\tau} J_t(\hat{\mathbf{y}}_t, \mathbf{y}_t).$$
 
- Llavors'aplica *backpropagation* sobre la xarxa desplegada com si fos una xarxa xarxa prealimentada (*feed-forward*) molt profunda. Com que els paràmetres són compartits entre tots els passos de temps, el gradient respecte a cada matriu de pesos és la suma de les contribucions de cada pas:
+ Llavor s'aplica *backpropagation* sobre la xarxa desplegada com si fos una xarxa xarxa prealimentada (*feed-forward*) molt profunda. Com que els paràmetres són compartits entre tots els passos de temps, el gradient respecte a cada matriu de pesos és la suma de les contribucions de cada pas:
 
 $$\frac{\partial J}{\partial W_{hh}} = \sum_{t=1}^{\tau} \frac{\partial J_t}{\partial W_{hh}}.$$
 
